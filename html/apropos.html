@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Tech for Business</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Réutilisation des variables CSS pour la cohérence */
+        :root {
+            --primary-color: #007bff; 
+            --secondary-color: #212529; 
+            --light-bg: #f8f9fa; 
+            --font-title: 'Poppins', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--secondary-color);
+            background-color: white;
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: var(--font-title);
+            font-weight: 700;
+        }
+        
+        .navbar-brand { font-size: 1.6rem; color: var(--secondary-color) !important; }
+        .navbar-brand span { color: var(--primary-color); }
+        .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 500; color: var(--secondary-color) !important; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
+        .btn-tech {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        .footer-tech { background-color: var(--secondary-color); color: white; }
+        .footer-link { color: rgba(255, 255, 255, 0.6) !important; text-decoration: none; }
+        
+        /* Styles Spécifiques à la page À Propos */
+        .page-header {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision-card {
+            border-left: 5px solid var(--primary-color);
+            padding: 2rem;
+            background-color: var(--light-bg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                Tech for <span>Business</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Catégories</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="a-propos.html">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="page-header text-center">
+        <div class="container" data-aos="fade-down">
+            <h1 class="display-5 fw-bold mb-0">Qui se cache derrière ce Blog ?</h1>
+        </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+
+            <section class="row align-items-center mb-5 pb-5">
+                <div class="col-lg-4 text-center" data-aos="fade-right">
+                    
+                    <h2 class="h4 fw-bold mt-3" style="color: var(--primary-color);">[Votre Prénom Nom]</h2>
+                    <p class="small text-muted">Consultant Tech & Fondateur de Tech for Business</p>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <h2 class="h3 fw-bold mb-4">Mon Univers : Simplifier la Tech pour les Entrepreneurs</h2>
+                    <p class="lead">
+                        Après [Nombre] années passées dans l'écosystème startup et PME, j'ai constaté un fossé :
+                        celui entre les technologies de pointe et leur accessibilité réelle pour les petites structures.
+                        C'est pourquoi j'ai créé ce blog.
+                    </p>
+                    <p>
+                        Mon objectif n'est pas de vendre du code, mais de décortiquer les outils, les stratégies
+                        et les tendances tech (IA, No Code, Cybersécurité, SaaS) pour les rendre immédiatement
+                        **exploitables et rentables** pour vous, que vous soyez autoentrepreneur, gérant de PME
+                        ou président d'association.
+                    </p>
+                    <a href="contact.html" class="text-decoration-none fw-bold small mt-3 d-inline-block" style="color: var(--primary-color);">
+                        Discutons d'un projet <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="py-4 my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center" data-aos="fade-up">
+                        <h2 class="h3 fw-bold mb-4">Ma Pensée : L'Efficacité avant la Complexité</h2>
+                        <div class="vision-card">
+                            <blockquote class="blockquote mb-0">
+                                <p class="mb-0 fs-5 text-muted">
+                                    "La meilleure technologie n'est pas la plus complexe ou la plus chère ; c'est celle
+                                    qui vous permet de vous concentrer sur ce que vous faites de mieux : votre métier."
+                                </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2 mb-0 text-end">
+                                [Votre Prénom] dans son article sur le minimalisme numérique.
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-5 bg-light-bg text-center rounded-3">
+                <h2 class="h3 fw-bold mb-5" data-aos="fade-up">Impact et Communauté</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <p class="display-4 fw-bold mb-0" style="color: var(--primary-color);">45K+</p>
+                        <p class="text-muted">Lecteurs mensuels</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <p class="display-4 fw-bold mb-0" style="color: var(--primary-color);">120+</p>
+                        <p class="text-muted">Articles publiés</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <p class="display-4 fw-bold mb-0" style="color: var(--primary-color);">92%</p>
+                        <p class="text-muted">De taux de satisfaction</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    
+    <footer class="footer-tech py-5 mt-5">
+        <div class="container">
+            <div class="text-center pt-3 border-top border-secondary mt-4">
+                <p class="mb-0 small text-white-50">&copy; 2025 Tech for Business. Développé par [Votre Nom].</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 900 });
+    </script>
+</body>
+
+</html>

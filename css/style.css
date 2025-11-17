@@ -1,0 +1,430 @@
+@charset "UTF-8";
+/* --- CHARTE GRAPHIQUE TECH FOR BUSINESS --- */
+:root {
+  --primary-color: #007bff; /* Bleu Bootstrap Électrique */
+  --secondary-color: #212529; /* Noir Anthracite */
+  --light-bg: #f8f9fa; /* Gris très clair */
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--secondary-color);
+  background-color: white;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* --- NAVIGATION --- */
+.navbar-brand {
+  font-size: 1.6rem;
+  color: var(--secondary-color) !important;
+}
+
+.navbar-brand span {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--secondary-color) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  background: url("../hero-tech.jpg") no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(33, 37, 41, 0.7); /* Overlay sombre pour contraster le titre */
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* --- BOUTONS / ACCENTS --- */
+.btn-tech {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px; /* Look moderne et arrondi */
+  transition: all 0.3s;
+}
+
+.btn-tech:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* --- SECTION TITRES --- */
+.section-title {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.separator-line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 10px 0 30px 0;
+}
+
+/* --- ARTICLE CARDS (Carte d'article) --- */
+.article-card {
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.article-card .card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: 3px solid var(--primary-color); /* Touche de couleur */
+}
+
+.card-title-article {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.article-card:hover .card-title-article {
+  color: var(--primary-color);
+}
+
+/* --- ARTICLE À LA UNE (FORMAT SPÉCIAL) --- */
+.featured-article-content {
+  background-color: var(--light-bg);
+  padding: 2.5rem;
+  height: 100%;
+}
+
+.featured-article-content h3 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+/* --- FOOTER --- */
+.footer-tech {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Styles spécifiques 404 */
+.error-container {
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  width: 90%;
+  border-top: 5px solid var(--primary-color); /* Utiliser la couleur primaire pour l'accent */
+}
+
+.error-code {
+  font-family: var(--font-title);
+  font-size: 8em; /* Plus grand pour l'impact */
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 0.1em;
+  opacity: 0.8;
+  text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.1);
+}
+
+.error-message {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+/* Reprise du style de bouton principal */
+.btn-tech-404 {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-tech-404:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.contact-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Styles Spécifiques à la page À Propos */
+.page-header {
+  background-color: var(--light-bg);
+  padding: 4rem 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vision-card {
+  border-left: 5px solid var(--primary-color);
+  padding: 2rem;
+  background-color: var(--light-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles Spécifiques à la page Contact */
+.page-header-contact {
+  background-color: var(--secondary-color); /* Fond sombre pour contraste */
+  color: white;
+  padding: 4rem 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.contact-info-card {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.contact-info-card i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Styles Spécifiques */
+.page-header-articles {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 4rem 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.article-card {
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.article-card .card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-title-article {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.article-card:hover .card-title-article {
+  color: var(--primary-color);
+}
+
+.badge-category {
+  background-color: var(--primary-color);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* -------------------------------------- */
+/* 1. Homogénéité des Images */
+/* -------------------------------------- */
+.article-img {
+  /* Définit une hauteur fixe pour toutes les images */
+  height: 200px;
+  /* S'assure que l'image couvre la zone sans être déformée */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Arrondit le haut des images */
+  border-top-left-radius: var(--bs-card-border-radius);
+  border-top-right-radius: var(--bs-card-border-radius);
+}
+
+/* -------------------------------------- */
+/* 2. Contraste et Typographie */
+/* -------------------------------------- */
+.article-card .card-body {
+  /* Assure que le corps de la carte utilise tout l'espace restant */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title-article {
+  /* Augmente le poids de la police pour un meilleur contraste */
+  font-weight: 700;
+  /* Maintient la hauteur de la zone de titre homogène sur deux lignes (facultatif) */
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; */
+}
+
+.card-text {
+  /* Maintient le paragraphe en bas si l'on utilise un flexbox (voir .card-body) */
+  margin-top: auto;
+  /* Assure un bon contraste pour le texte secondaire */
+  color: #495057 !important; /* Utilise une couleur plus foncée que 'text-muted' */
+}
+
+.badge-category {
+  /* Améliore le contraste du badge (ajustez les couleurs selon votre thème) */
+  background-color: #007bff; /* Couleur de fond vive */
+  color: white; /* Texte blanc */
+  font-weight: 600;
+}
+
+/* Styles Spécifiques à la lecture */
+.article-hero-img {
+  max-height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  border-bottom: 5px solid var(--primary-color);
+}
+
+.article-content h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  /* Le titre de section utilise le même style class */
+  border-left: 5px solid var(--primary-color);
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+/* Titre de conclusion */
+.article-content h3.conclusion-title {
+  font-size: 2.2rem; /* Plus grand pour souligner la fin */
+  margin-top: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.article-content p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.illustration-img-small {
+  height: auto;
+  max-width: 100%;
+  border-radius: 5px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.author-box {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.social-share a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: var(--secondary-color);
+  transition: color 0.3s;
+}
+
+.social-share a:hover {
+  color: var(--primary-color);
+}
+
+.imageSize {
+  width: 75%;
+  height: 75%;
+}
+
+.body_colors {
+  background-color: #F5F5F5;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,90 @@
+/* Styles Spécifiques */
+        .page-header-articles {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4rem 0;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .article-card {
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: white;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .article-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-title-article {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+        
+        .article-card:hover .card-title-article {
+            color: var(--primary-color);
+        }
+        
+        .badge-category {
+            background-color: var(--primary-color);
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* -------------------------------------- */
+/* 1. Homogénéité des Images */
+/* -------------------------------------- */
+.article-img {
+    /* Définit une hauteur fixe pour toutes les images */
+    height: 200px; 
+    /* S'assure que l'image couvre la zone sans être déformée */
+    object-fit: cover;
+    /* Arrondit le haut des images */
+    border-top-left-radius: var(--bs-card-border-radius);
+    border-top-right-radius: var(--bs-card-border-radius);
+}
+
+/* -------------------------------------- */
+/* 2. Contraste et Typographie */
+/* -------------------------------------- */
+.article-card .card-body {
+    /* Assure que le corps de la carte utilise tout l'espace restant */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title-article {
+    /* Augmente le poids de la police pour un meilleur contraste */
+    font-weight: 700; 
+    /* Maintient la hauteur de la zone de titre homogène sur deux lignes (facultatif) */
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; */
+}
+
+.card-text {
+    /* Maintient le paragraphe en bas si l'on utilise un flexbox (voir .card-body) */
+    margin-top: auto;
+    /* Assure un bon contraste pour le texte secondaire */
+    color: #495057 !important; /* Utilise une couleur plus foncée que 'text-muted' */
+}
+
+.badge-category {
+    /* Améliore le contraste du badge (ajustez les couleurs selon votre thème) */
+    background-color: #007bff; /* Couleur de fond vive */
+    color: white; /* Texte blanc */
+    font-weight: 600;
+}

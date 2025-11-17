@@ -1,0 +1,55 @@
+ /* Styles Spécifiques à la lecture */
+        .article-hero-img {
+            max-height: 450px;
+            object-fit: cover;
+            width: 100%;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            /* Le titre de section utilise le même style class */
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+        
+        /* Titre de conclusion */
+        .article-content h3.conclusion-title {
+            font-size: 2.2rem; /* Plus grand pour souligner la fin */
+            margin-top: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .article-content p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .illustration-img-small {
+            height: auto;
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-box {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .social-share a {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+
+        .social-share a:hover {
+            color: var(--primary-color);
+        }

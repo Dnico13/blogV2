@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech for Business - Solutions Tech pour PME & Autoentrepreneurs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <?php require_once 'navbar.php'; ?>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <h1 class="mb-3">La Tech au Service de Votre Réussite</h1>
+            <p class="lead mb-4 text-white-50">Des solutions concrètes et éprouvées pour les PME, TPE et Autoentrepreneurs.</p>
+            <a href="#featured" class="btn btn-tech btn-lg">Lire le dernier article</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="py-5 bg-white" id="featured">
+            <div class="container">
+                <h2 class="section-title">À la Une</h2>
+                <div class="separator-line"></div>
+
+                <div class="row g-0 shadow-lg" data-aos="zoom-in">
+
+                    <div class="col-lg-7">
+                        <img src="article-featured.jpg" class="img-fluid w-100" alt="Article mis en avant">
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="featured-article-content">
+                            <span class="badge bg-primary mb-3 text-uppercase">Stratégie</span>
+                            <h3 class="card-title-article mb-3">5 Outils IA pour automatiser votre comptabilité en 2025</h3>
+                            <p class="text-muted small mb-3">Par Alex Dubois - 15 Oct. 2025</p>
+                            <p class="lead fw-light">L'intelligence artificielle n'est plus un luxe. Découvrez comment les petites structures peuvent l'intégrer pour gagner des heures...</p>
+                            <a href="#" class="text-decoration-none fw-bold" style="color: var(--primary-color);">Lire l'article complet <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-5" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title">Les Derniers Billets</h2>
+                <div class="separator-line"></div>
+
+                <div class="row g-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card article-card h-100">
+                            <img src="article1.jpg" class="card-img-top" alt="Cyber Sécurité">
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">Sécurité</span>
+                                <h4 class="card-title-article mb-3">Cyber-sécurité : Protéger votre PME avec un petit budget</h4>
+                                <p class="card-text small text-muted">Les étapes essentielles pour garantir la sécurité de vos données sans exploser votre budget.</p>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                            <div class="card-footer bg-white border-0 small text-muted">
+                                Publié le 28/09/2025
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card article-card h-100">
+                            <img src="article2.jpg" class="card-img-top" alt="Outils No Code">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Outils No Code</span>
+                                <h4 class="card-title-article mb-3">Créer un site pro sans coder ? Le guide des outils No Code</h4>
+                                <p class="card-text small text-muted">Faites décoller votre activité en ligne grâce aux plateformes No-Code les plus performantes du marché.</p>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                            <div class="card-footer bg-white border-0 small text-muted">
+                                Publié le 15/09/2025
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card article-card h-100">
+                            <img src="article3.jpg" class="card-img-top" alt="Réseaux Sociaux">
+                            <div class="card-body">
+                                <span class="badge bg-info mb-2">Marketing</span>
+                                <h4 class="card-title-article mb-3">Maximiser votre visibilité sur LinkedIn sans y passer la journée</h4>
+                                <p class="card-text small text-muted">Des astuces simples pour un impact maximal sur le réseau social professionnel incontournable.</p>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                            <div class="card-footer bg-white border-0 small text-muted">
+                                Publié le 01/09/2025
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="archives.html" class="btn btn-outline-secondary rounded-pill px-4">Voir tous les articles <i class="fas fa-long-arrow-alt-right ms-2"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-5 bg-primary" data-aos="zoom-in">
+            <div class="container text-center text-white">
+                <h3 class="fw-bold mb-3" style="font-family: var(--font-title);">Ne manquez aucune tendance Tech !</h3>
+                <p class="lead mb-4 text-white-75">Recevez nos analyses directement par email. (Gratuit et sans spam)</p>
+
+                <form class="row justify-content-center" action="subscribe.php" method="POST">
+                    <div class="col-md-5 mb-3">
+                        <input type="email" class="form-control rounded-pill py-2" placeholder="Votre adresse email professionnelle" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <button type="submit" class="btn btn-light btn-tech rounded-pill w-100 py-2" style="background-color: white !important; color: var(--primary-color) !important; border-color: white !important;">S'abonner</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <?php require_once 'footer.php'; ?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 900
+        });
+    </script>
+</body>
+
+</html>
