@@ -4,6 +4,11 @@
 $delai = 150;
 
 ?>
+<header class="page-header text-center">
+    <div class="container" data-aos="fade-down">
+        <h1 class="display-5 fw-bold mb-0">Tous nos Articles sur la Technologie et le Business. </h1>
+    </div>
+</header>
 
 <main class="py-5 ">
     <div class="container">

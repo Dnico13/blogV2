@@ -10,7 +10,7 @@
              <ul class="navbar-nav ms-auto">
                  <li class="nav-item">
                     <a class="nav-link 
-                    <?php if ('accueil' === $currentPage) echo 'active'; ?> "
+                    <?php if ('accueil' === $currentPage || $currentPage === '') echo 'active'; ?> "
                        hx-get="/accueil" 
                        hx-target="#main"
                        hx-push-url="/accueil"
