@@ -15,9 +15,30 @@
                          <!-- <i class="fas fa-eye me-1"></i> 1500 vues-->
                      </p>
                  </div>
+                 <div class="d-flex flex-column">
+                     <div class="row">
 
-                 <div class="mb-5 text-center" data-aos="zoom-in">
-                     <img src="uploads/<?= $article["photo2"]; ?>" class="article-hero-img img-fluid rounded imageSize" alt="Image pour l'article <?= $article["titre_general"]; ?>" loading="lazy>
+                         <p class="small text-center text-primary">
+                             --- L'article en vidéo ---
+                         </p>
+
+                         <div class="mb-5 text-center mx-auto shadow-lg rounded-4  ratio ratio-16x9" data-aos="zoom-in" style="max-width: 500px;">
+                             <video
+                                 class=" rounded-4 "
+                                 poster="/uploads/posterVideoBlog.png" controls
+                                 preload="metadata"
+                                 title="L'article <?= $article["titre_general"]; ?> en vidéo"
+                                 loading="lazy">
+
+                                 <source src="<?= $article["video"]; ?>" type="video/mp4">
+
+
+                                 Votre navigateur ne supporte pas l'élément vidéo HTML5.
+                             </video>
+
+                         </div>
+
+                     </div>
                  </div>
 
                  <div class="article-content" data-aos="fade-up">
@@ -27,9 +48,10 @@
                      <h2><?= $article["titre2"]; ?></h2>
                      <p><?= $article["para2"]; ?></p>
 
-                     <div class="text-center my-4" data-aos="fade-up">
-                         <img src="uploads/<?= $article["photo3"]; ?>" class="illustration-img-small img-fluid imageSize" alt="Illustration pour l'article <?= $article["titre_general"]; ?>" loading="lazy>
-                         <p class="small text-muted fst-italic"></p>
+                     <div class="text-center my-4 mb-5 mx-auto" data-aos="fade-up" style="max-width: 600px;">
+                         <img src="uploads/<?= $article["photo2"]; ?>" class="article-hero-img img-fluid rounded imageSize" alt="Image pour l'article <?= $article["titre_general"]; ?>" loading="lazy">
+                         <!-- <img src="uploads/<?= $article["photo3"]; ?>" class="illustration-img-small img-fluid imageSize" alt="Illustration pour l'article <?= $article["titre_general"]; ?>" loading="lazy>
+                         <p class="small text-muted fst-italic"></p>-->
                      </div>
 
                      <h2><?= $article["titre3"]; ?></h2>
@@ -41,7 +63,7 @@
                      <hr class="mt-5 mb-4">
 
                      <h3 class="conclusion-title"><?= $article["titre5"]; ?></h3>
-                     <p class="text-center fs-5 text-muted"><?= $article["para5"]; ?></p>
+                     <p><?= $article["para5"]; ?></p>
 
                  </div>
 
