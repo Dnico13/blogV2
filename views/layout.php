@@ -12,7 +12,7 @@
     <meta name="keywords" content="<?= htmlspecialchars($keywords ?? 'Tech for Business, astuces numériques TPE, guide No Code PME, IA simple, micro-stratégies web, développement d\'affaires, blog tech accessible, association numérique') ?>" id="meta-keywords">
 
     <meta name="author" content="Nicolas Delannay - Fondateur Tech for Business">
-    <meta name="robots" content="index, follow">
+    
     <meta http-equiv="Content-Language" content="fr">
 
     <meta property="og:title" content="<?= $title ?? 'Tech for Business | Le Blog des Entrepreneurs' ?>" id="og-title">
