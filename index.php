@@ -78,51 +78,54 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/contact-blog-tech.jpg'; 
 }  elseif ($uri === 'detailArticle' || $uri === 'detailArticle-partial') {
 
-    // --- NOUVELLE LOGIQUE POUR LE DÉTAIL DE L'ARTICLE ---
     require_once 'pdo.php';
-    $article_id = (int) ($_GET['id'] ?? 0); // Renommé $projet_id en $article_id pour la clarté du blog
+    
+    // 1. On récupère les deux sources possibles
+    $id = $_GET['id'] ?? null;
+    $slug = $_GET['slug'] ?? null;
 
-    if ($article_id > 0) {
+    if ($id || $slug) {
+        // 2. On adapte la requête SQL selon ce qu'on a reçu
+        if ($slug) {
+            $sql = "SELECT * FROM article WHERE slug = :param";
+            $param = $slug;
+            $type = PDO::PARAM_STR;
+        } else {
+            $sql = "SELECT * FROM article WHERE id = :param";
+            $param = (int)$id;
+            $type = PDO::PARAM_INT;
+        }
 
-        // Requête préparée sécurisée
-        $statement = $pdo->prepare("SELECT * FROM article WHERE id = :id");
-        $statement->execute(['id' => $article_id]);
-        $articleData = $statement->fetch(PDO::FETCH_ASSOC); // Renommé $projetData en $articleData
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(':param', $param, $type);
+        $statement->execute();
+        $articleData = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!$articleData) {
-            // Article non trouvé en base de données
             goto notFound;
         }
 
-        // Si l'article est trouvé
+        // 3. Si l'article est trouvé, on prépare la vue
         $contentView = 'views/detailArticle.php';
-        $viewData['article'] = $articleData; // Passe les données de l'article
+        $viewData['article'] = $articleData;
 
-        // MISE À JOUR DES BALISES MÉTA AVEC LES DONNÉES SPÉCIFIQUES DE L'ARTICLE
-        
-        // Titre : On conserve le titre dynamique + ajout du nom du blog
+        // --- MÉTADONNÉES DYNAMIQUES ---
         $viewData['title'] = htmlspecialchars($articleData['titre_general']) . ' | Blog Tech for Business';
         
-        // Description : On utilise la présentation (si disponible) et on ajoute un appel à l'action
-        // Remplacement de 'Détail d\'un projet' par une phrase plus pertinente pour le blog
         $default_description = 'Découvrez les astuces, outils et stratégies expliqués dans cet article de fond par Tech for Business.';
         $viewData['description'] = htmlspecialchars($articleData['presentation'] ?? $default_description);
         
-        // Canonical : Reste dynamique
-        $viewData['canonical'] = 'https://www.techforbusiness.fr/detailArticle?id=' . $article_id; // Changement de 'DetailDuProjet' à 'article' pour la cohérence
+        // URL Canonical Propre : On privilégie le slug pour l'URL finale
+        $canonical_slug = $articleData['slug'] ?? "id=".$articleData['id'];
+        $viewData['canonical'] = 'https://www.techforbusiness.fr/article/' . $canonical_slug;
         
-        // Image OG : Utiliser l'image de l'article si elle existe (ici on conserve l'image par défaut)
         $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/image-par-defaut-article.jpg';
-        
-        // AJOUT RECOMMANDÉ : Mots-clés Dynamiques
-        // Si vous avez un champ 'mots_cles' ou 'tags' dans votre table 'article', utilisez-le ici !
-        // Exemple (en supposant que 'mots_cles' est un champ dans la DB) :
-        // $viewData['keywords'] = htmlspecialchars($articleData['mots_cles'] ?? 'tech for business, astuces, IA, No Code');
-        
+
     } else {
-        // ID manquant ou invalide
         goto notFound;
     }
+
+   
 } elseif ($uri === 'aPropos' || $uri === 'aPropos-partial') {
     $contentView = 'views/aPropos.php';
     

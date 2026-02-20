@@ -1,33 +1,38 @@
-<?php require_once 'pdo.php';
-   
+<?php 
+require_once 'pdo.php';
 
-        // Requête préparée sécurisée pour l esemble des articles//
-        $statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC");
-        $statement->execute();
-        $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+// 1. Liste de tous les articles
+$statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC");
+$statement->execute();
+$articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+// 2. Récupération d'un article spécifique (ID ou SLUG)
+if (isset($_GET['id']) || isset($_GET['slug'])) {
+    if (isset($_GET['slug'])) {
+        $param = $_GET['slug'];
+        $sql = "SELECT * FROM article WHERE slug = :param";
+        $type = PDO::PARAM_STR;
+    } else {
+        $param = $_GET['id'];
+        $sql = "SELECT * FROM article WHERE id = :param";
+        $type = PDO::PARAM_INT;
+    }
 
-        // Requête préparée sécurisée pour un article spécifique//
-        if (isset($_GET['id'])) {
-            $articleId = $_GET['id'];
-            $statement = $pdo->prepare("SELECT * FROM article WHERE id = :id");
-            $statement->bindParam(':id', $articleId, PDO::PARAM_INT);
-            $statement->execute();
-            $article = $statement->fetch(PDO::FETCH_ASSOC);
-        } else {
-            $article = null; // Aucun article spécifique demandé
-        } 
-        
-        
-        // requete pour les 3 dernieres articles apres le dernier       
-        $statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 3 OFFSET 1");
-        $statement->execute();  
-        $recentArticles = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':param', $param, $type);
+    $statement->execute();
+    $article = $statement->fetch(PDO::FETCH_ASSOC);
+} else {
+    $article = null; 
+} 
 
-        // requete pour le dernier article
-        $statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 1");
-        $statement->execute();  
-        $lastArticle = $statement->fetch(PDO::FETCH_ASSOC);
+// 3. Les 3 articles récents (pour les suggestions)
+$statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 3 OFFSET 1");
+$statement->execute();  
+$recentArticles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+// 4. Le tout dernier article (pour la mise en avant)
+$statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 1");
+$statement->execute();  
+$lastArticle = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
-       
