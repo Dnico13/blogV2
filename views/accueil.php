@@ -22,7 +22,7 @@
              <div class="row g-0 shadow-lg" data-aos="zoom-in">
 
                  <div class="col-lg-7">
-                     <img src="/uploads/<?= $lastArticle['photo1']; ?>" class="img-fluid w-100" alt="illustration de l'article <?= $lastArticle['titre_general']; ?> " loading="lazy">
+                     <img src="/uploads/<?= $lastArticle['photo1']; ?>" class="img-fluid w-100 h-100" alt="illustration de l'article <?= $lastArticle['titre_general']; ?> " loading="lazy">
 
                  </div>
 
