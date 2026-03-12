@@ -7,7 +7,7 @@
  */
 
 // On utilise $canonical directement car il est déjà complet dans $viewData
-$canonicalUrl = $canonical ?? 'https://www.ndev2023.fr/';
+$canonicalUrl = $canonical ?? 'https://www.techforbusiness.fr/';
 
 // --- MISE À JOUR DU <head> VIA hx-swap-oob --- 
 ?>

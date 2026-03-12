@@ -12,7 +12,7 @@
     <meta name="keywords" content="<?= htmlspecialchars($keywords ?? 'Tech for Business, astuces numériques TPE, guide No Code PME, IA simple, micro-stratégies web, développement d\'affaires, blog tech accessible, association numérique') ?>" id="meta-keywords">
 
     <meta name="author" content="Nicolas Delannay - Fondateur Tech for Business">
-    
+
     <meta http-equiv="Content-Language" content="fr">
 
     <meta property="og:title" content="<?= $title ?? 'Tech for Business | Le Blog des Entrepreneurs' ?>" id="og-title">
@@ -51,15 +51,26 @@
 
         gtag('config', 'G-W7SJGSD8PM');
     </script>
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "vomvk8wr2q");
+    </script>
 
 
 
 
 
-
-    <?php 
+    <?php
     //variables pour le balise nav et le footer
-    $currentPage = basename($_SERVER['REDIRECT_URL'], ".php"); 
+    $currentPage = basename($_SERVER['REDIRECT_URL'], ".php");
     $annee = date('Y');
     ?>
 </head>

@@ -7,3 +7,6 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Transformer /article/mon-slug en detailArticle.php?slug=mon-slug
+RewriteRule ^article/([a-zA-Z0-9\-]+)$ detailArticle.php?slug=$1 [L,QSA]
