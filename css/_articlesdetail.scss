@@ -53,3 +53,7 @@
         .social-share a:hover {
             color: var(--primary-color);
         }
+
+        .bg-primary.bg-opacity-10 {
+    background-color: rgba(13, 110, 253, 0.1) !important; /* Couleur bleue Bootstrap très claire */
+}

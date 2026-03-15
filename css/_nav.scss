@@ -1,0 +1,54 @@
+/* --- STYLE NAVBAR UNIFIÉ --- */
+
+.navbar { 
+    top: 35px !important; /* Laisse de la place pour ta network-bar */
+    background-color: #000000 !important; /* Noir pur pour trancher avec le body */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+/* Logo Tech for Business */
+.navbar-brand {
+    font-weight: 700;
+    color: #ffffff !important;
+    font-size: 1.4rem;
+}
+
+.navbar-brand span {
+    color: var(--ps-green); /* Le mot "Business" en vert néon */
+}
+
+/* Liens de navigation */
+.nav-link { 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #bdc3c7 !important; /* Gris text-muted de ta charte */
+    transition: 0.3s; 
+    padding: 0.5rem 1.2rem !important;
+}
+
+/* Hover : passage au vert */
+.nav-link:hover { 
+    color: var(--ps-green) !important; 
+}
+
+/* État Actif : Vert + Lueur */
+.nav-link.active { 
+    color: var(--ps-green) !important; 
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(50, 255, 180, 0.5); 
+}
+
+/* Adaptation pour le menu mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #000000;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 10px;
+        border: 1px solid var(--ps-border);
+    }
+}

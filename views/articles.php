@@ -40,20 +40,20 @@ $delai = 150;
        <div class="row g-4 mt-4">
     <?php foreach ($articles as $article): ?>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?= $delai; ?>">
+        <div class="col-lg-4 col-md-6 shadow-green-glow rounded-4"  data-aos="fade-up" data-aos-delay="<?= $delai; ?>">
             <a href="/detailArticle?slug=<?= htmlspecialchars($article['slug']) ?>" class="text-decoration-none text-dark d-block h-100">
-                <div class="card article-card h-100 shadow-sm border rounded-4">
+                <div class="card article-card  h-100 shadow-sm  rounded-4 bg-dark border-0">
                     <img src="./uploads/<?= htmlspecialchars($article['photo1']); ?>" 
                          class="card-img-top img-fluid article-img" 
                          alt="Article : <?= htmlspecialchars($article['titre_general']); ?>" 
                          loading="lazy">
                     
-                    <div class="card-body bg-body-secondary">
+                    <div class="card-body ">
                         <span class="badge badge-category mb-2 w-50"><?= htmlspecialchars($article['rubrique']); ?></span>
-                        <h4 class="card-title-article mb-3"><?= htmlspecialchars($article['titre_general']); ?></h4>
+                        <h4 class="card-title-article mb-3 text-light"><?= htmlspecialchars($article['titre_general']); ?></h4>
                     </div>
 
-                    <div class="card-footer bg-light border-top small text-secondary d-flex justify-content-between">
+                    <div class="card-footer border-top small text-muted d-flex justify-content-between ">
                         <span><i class="far fa-clock me-1"></i> 5 min de lecture</span>
                         <span><i class="fas fa-calendar-alt me-1"></i><?= htmlspecialchars($article['date']); ?></span>
                     </div>

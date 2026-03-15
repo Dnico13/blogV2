@@ -1,55 +1,65 @@
- 
-        /* Styles spécifiques 404 */
-        .error-container {
-            padding: 50px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            max-width: 650px;
-            width: 90%;
-            border-top: 5px solid var(--primary-color); /* Utiliser la couleur primaire pour l'accent */
-        }
+@use 'colors' as *;
 
-        .error-code {
-            font-family: var(--font-title);
-            font-size: 8em; /* Plus grand pour l'impact */
-            font-weight: 700;
-            color: var(--primary-color);
-            line-height: 1;
-            margin-bottom: 0.1em;
-            opacity: 0.8;
-            text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.1);
-        }
+.error-page-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ps-dark);
+    color: #ffffff !important;
+    position: relative;
+    overflow: hidden;
+}
 
-        .error-message {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-        
-        /* Reprise du style de bouton principal */
-        .btn-tech-404 {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
+.error-container {
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--ps-border);
+    border-radius: 24px;
+    max-width: 600px;
+    width: 95%;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 
-        .btn-tech-404:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-            transform: translateY(-2px);
+    /* Forcer la visibilité de TOUT le texte à l'intérieur */
+    h1, h2, p, span, div {
+        color: #ffffff !important;
+    }
+
+    .error-code {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(5rem, 15vw, 9rem);
+        font-weight: 800;
+        color: var(--ps-green) !important;
+        line-height: 1;
+        margin-bottom: 20px;
+        text-shadow: 0 0 30px rgba(50, 255, 180, 0.2);
+    }
+
+    .error-message {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .text-muted {
+        color: var(--ps-text-muted) !important;
+        font-size: 1.1rem;
+    }
+
+    .btn-tech-404 {
+        @include btn-premium; // Utilisation du mixin (Plus d'erreur de compilation !)
+        margin-top: 30px;
+    }
+    
+    .contact-link {
+        color: var(--ps-green) !important;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
         }
-        
-        .contact-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
+    }
+}

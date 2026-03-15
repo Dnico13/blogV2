@@ -1,43 +1,298 @@
 @charset "UTF-8";
-/* --- CHARTE GRAPHIQUE TECH FOR BUSINESS --- */
+/* --- BANDEAU COOKIES TECH FOR BUSINESS --- */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(15, 17, 19, 0.95); /* Utilise ton ps-dark avec transparence */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(50, 255, 180, 0.2); /* Bordure subtile verte */
+  border-radius: 20px;
+  z-index: 99999 !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.cookie-banner.show {
+  display: block !important;
+}
+@media (max-width: 576px) {
+  .cookie-banner {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
 :root {
-  --primary-color: #007bff; /* Bleu Bootstrap Électrique */
-  --secondary-color: #212529; /* Noir Anthracite */
-  --light-bg: #f8f9fa; /* Gris très clair */
-  --font-title: "Poppins", sans-serif;
-  --font-body: "Roboto", sans-serif;
+  /* Vert optimisé : passe de #29c790 à #32FFB4 (Ratio > 4.5:1 sur noir) */
+  --ps-green: #32FFB4;
+  --ps-dark: #0f1113;
+  /* Gris secondaire : indispensable pour Lighthouse (Ratio suffisant) */
+  --ps-text-muted: #bdc3c7;
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--secondary-color);
-  background-color: white;
+  background-color: var(--ps-dark);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 1.6; /* Améliore l'accessibilité à la lecture */
 }
 
-h1, h2, h3, h4, .navbar-brand {
-  font-family: var(--font-title);
+.text-green {
+  color: var(--ps-green) !important;
+}
+
+/* Correction pour les textes secondaires (auparavant trop sombres) */
+.text-secondary, .text-muted {
+  color: var(--ps-text-muted) !important;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- Barre d'Ecosystème --- */
+.network-bar {
+  background: #000000; /* Fond plein pour éviter les soucis de contraste sur le scroll */
+  border-bottom: 1px solid var(--ps-border);
+  font-size: 11px;
+  padding: 8px 0; /* Légèrement plus large pour la zone de clic (accessibilité) */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1040;
+}
+
+.network-bar a {
+  color: #d1d1d1; /* Gris plus clair pour passer le test Lighthouse */
+  text-decoration: none;
+  transition: 0.3s;
+  margin-left: 15px;
+  display: inline-block; /* Meilleure zone de clic */
+}
+
+.network-bar a:hover {
+  color: var(--ps-green);
+}
+
+.network-bar .active-site {
+  color: var(--ps-green);
   font-weight: 700;
 }
 
-/* --- NAVIGATION --- */
-.navbar-brand {
-  font-size: 1.6rem;
-  color: var(--secondary-color) !important;
+/* Effet premium */
+.hero-section {
+  padding: 180px 0 100px;
+  position: relative;
 }
 
-.navbar-brand span {
-  color: var(--primary-color);
+.bg-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--ps-green-glow) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
 }
 
-.nav-link {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--secondary-color) !important;
+/* Boutons : Correction du contraste texte/fond */
+.btn-ps-primary {
+  background: var(--ps-green);
+  color: #000000; /* Noir pur sur vert pour un contraste maximal */
+  font-weight: 700;
+  padding: 8px 32px; /* par defaut 16px vertical */
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid var(--ps-green); /* Bordure pour définir la forme */
+  display: inline-block;
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--primary-color) !important;
+.btn-ps-primary:hover {
+  box-shadow: 0 0 25px var(--ps-green-glow);
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+/* Feature Boxes */
+.feature-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--ps-border); /* Couleur par défaut définie dans :root  var(--ps-border)*/
+  padding: 40px;
+  border-radius: 24px;
+  transition: 0.4s;
+  height: 100%;
+}
+
+.feature-box:hover {
+  border-color: var(--ps-green);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+/* Style pour l'icône de lien externe */
+.external-icon {
+  font-size: 0.8rem;
+  vertical-align: middle;
+  margin-left: 5px;
+  opacity: 0.9; /* Plus visible */
+}
+
+/* --- AMBIANCE LUMINEUSE --- */
+.hero-section {
+  padding: 180px 0 120px;
+  background: var(--ps-dark);
+}
+
+.liquid-blob, .liquid-blob-2 {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(50, 255, 180, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.liquid-blob {
+  top: -10%;
+  right: -5%;
+}
+
+.liquid-blob-2 {
+  bottom: 0;
+  right: 20%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 70%);
+}
+
+/* --- VITRINE DIGITALE --- */
+.premium-showcase {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window-mockup {
+  background: #1a1d21;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-window {
+  width: 420px;
+  height: 300px;
+  z-index: 1;
+  transform: perspective(1200px) rotateY(-15deg) rotateX(7deg);
+  transition: 0.6s ease;
+}
+
+.main-window:hover {
+  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg) scale(1.02);
+}
+
+.window-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  display: flex;
+  gap: 6px;
+}
+
+.window-header .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.window-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.content-overlay {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+}
+
+.mini-line {
+  height: 4px;
+  width: 35px;
+  background: var(--ps-green);
+  border-radius: 2px;
+}
+
+/* LE SMARTPHONE FLOTTANT */
+.phone-mockup {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  width: 110px;
+  height: 210px;
+  background: #08090a;
+  border: 4px solid #1a1d21;
+  border-radius: 24px;
+  z-index: 3;
+  animation: float-phone 5s infinite ease-in-out;
+}
+
+@keyframes float-phone {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+.shadow-green-glow {
+  box-shadow: 0 0 40px rgba(50, 255, 180, 0.2);
+}
+
+/* --- FEATURE BOXES --- */
+.feature-box {
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--ps-border);
+  transition: 0.4s;
+}
+
+.feature-box:hover {
+  border-color: var(--ps-green);
+  transform: translateY(-10px);
+  background: rgba(50, 255, 180, 0.03);
+}
+
+/* À mettre dans ton fichier de base */
+body {
+  background-color: var(--ps-dark) !important;
+  color: #ffffff !important; /* Force le blanc partout */
+}
+
+/* On s'assure que les paragraphes et les titres héritent du blanc */
+p, span, h1, h2, h3, h4, h5, h6, li {
+  color: #ffffff;
+}
+
+/* Sauf pour le texte muté qui doit rester gris clair */
+.text-muted {
+  color: var(--ps-text-muted) !important;
 }
 
 /* --- HERO SECTION --- */
@@ -161,59 +416,80 @@ h1, h2, h3, h4, .navbar-brand {
   color: var(--primary-color) !important;
 }
 
-/* Styles spécifiques 404 */
+.error-page-wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ps-dark);
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
 .error-container {
-  padding: 50px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  max-width: 650px;
-  width: 90%;
-  border-top: 5px solid var(--primary-color); /* Utiliser la couleur primaire pour l'accent */
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--ps-border);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 95%;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  /* Forcer la visibilité de TOUT le texte à l'intérieur */
 }
-
-.error-code {
-  font-family: var(--font-title);
-  font-size: 8em; /* Plus grand pour l'impact */
-  font-weight: 700;
-  color: var(--primary-color);
+.error-container h1, .error-container h2, .error-container p, .error-container span, .error-container div {
+  color: #ffffff !important;
+}
+.error-container .error-code {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 800;
+  color: var(--ps-green) !important;
   line-height: 1;
-  margin-bottom: 0.1em;
-  opacity: 0.8;
-  text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.1);
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(50, 255, 180, 0.2);
 }
-
-.error-message {
-  font-family: var(--font-title);
-  font-size: 2rem;
-  font-weight: 600;
+.error-container .error-message {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 15px;
-  color: var(--secondary-color);
 }
-
-/* Reprise du style de bouton principal */
-.btn-tech-404 {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: white;
-  padding: 0.75rem 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s;
+.error-container .text-muted {
+  color: var(--ps-text-muted) !important;
+  font-size: 1.1rem;
 }
-
-.btn-tech-404:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.contact-link {
-  color: var(--primary-color);
+.error-container .btn-tech-404 {
+  background: #32FFB4;
+  color: #000000;
+  font-weight: 700;
+  padding: 8px 32px;
+  border-radius: 12px;
   text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid #32FFB4;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+}
+.error-container .btn-tech-404:hover {
+  box-shadow: 0 0 25px rgba(50, 255, 180, 0.4);
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+.error-container .btn-tech-404 {
+  margin-top: 30px;
+}
+.error-container .contact-link {
+  color: var(--ps-green) !important;
   font-weight: 600;
+  text-decoration: none;
+}
+.error-container .contact-link:hover {
+  text-decoration: underline;
 }
 
 /* Styles Spécifiques à la page À Propos */
@@ -425,6 +701,84 @@ h1, h2, h3, h4, .navbar-brand {
   height: 75%;
 }
 
-.body_colors {
-  background-color: #F5F5F5;
+/* --- STYLE NAVBAR UNIFIÉ --- */
+.navbar {
+  top: 35px !important; /* Laisse de la place pour ta network-bar */
+  background-color: #000000 !important; /* Noir pur pour trancher avec le body */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Logo Tech for Business */
+.navbar-brand {
+  font-weight: 700;
+  color: #ffffff !important;
+  font-size: 1.4rem;
+}
+
+.navbar-brand span {
+  color: var(--ps-green); /* Le mot "Business" en vert néon */
+}
+
+/* Liens de navigation */
+.nav-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #bdc3c7 !important; /* Gris text-muted de ta charte */
+  transition: 0.3s;
+  padding: 0.5rem 1.2rem !important;
+}
+
+/* Hover : passage au vert */
+.nav-link:hover {
+  color: var(--ps-green) !important;
+}
+
+/* État Actif : Vert + Lueur */
+.nav-link.active {
+  color: var(--ps-green) !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(50, 255, 180, 0.5);
+}
+
+/* Adaptation pour le menu mobile */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    border: 1px solid var(--ps-border);
+  }
+}
+.privacy-section .privacy-content {
+  line-height: 1.8;
+}
+.privacy-section .privacy-block h2 {
+  border-left: 3px solid var(--ps-green);
+  padding-left: 15px;
+}
+.privacy-section .custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+.privacy-section .custom-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+.privacy-section .custom-list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--ps-green);
+  font-size: 0.8rem;
+}
+.privacy-section .border-green {
+  border-color: var(--ps-green) !important;
 }/*# sourceMappingURL=style.css.map */

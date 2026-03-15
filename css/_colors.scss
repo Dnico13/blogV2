@@ -1,5 +1,45 @@
-.body_colors {
-    background-color: #F5F5F5;
+/* --- BANDEAU COOKIES TECH FOR BUSINESS --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(15, 17, 19, 0.95); /* Utilise ton ps-dark avec transparence */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(50, 255, 180, 0.2); /* Bordure subtile verte */
+    border-radius: 20px;
+    z-index: 99999 !important;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    display: none; 
 
+    &.show {
+        display: block !important;
+    }
+    
+    // Pour les petits écrans
+    @media (max-width: 576px) {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}
+@mixin btn-premium {
+    background: #32FFB4; // ton --ps-green
+    color: #000000;
+    font-weight: 700;
+    padding: 8px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid #32FFB4;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
 
-}  
+    &:hover {
+        box-shadow: 0 0 25px rgba(50, 255, 180, 0.4);
+        transform: translateY(-2px);
+        background: #ffffff;
+        border-color: #ffffff;
+        color: #000000;
+    }
+}

@@ -10,12 +10,12 @@
         <section class="row align-items-center mb-5 pb-5">
             <div class="col-lg-4 text-center" data-aos="fade-right">
 
-                <h2 class="h4 fw-bold mt-3" style="color: var(--primary-color);">Nicolas Delannay</h2>
+                <h2 class="h4 fw-bold mt-3 text-green" >Nicolas Delannay</h2>
                 <p class="small text-muted">Fondateur de Tech for Business & Passionné du Web</p>
             </div>
             <div class="col-lg-8" data-aos="fade-left">
                 <h2 class="h3 fw-bold mb-4">Ma Vision : Le Web comme un Moteur de Croissance Accessible à Tous</h2>
-                <p class="lead">
+                <p class="lead text-muted">
                     Ma plus grande passion est de voir comment le numérique peut devenir un puissant levier de développement pour toutes les structures,
                     même les plus petites. Je suis convaincu qu'aujourd'hui, l'accès à une croissance solide ne devrait pas être limité par la taille ou le budget.
                     Ici, je partage une vision simple : que la technologie soit un allié et non une contrainte.
@@ -24,24 +24,24 @@
                 <p>
                     Mon but est de vous donner des idées pour développer efficacement votre courant d'affaires et sécuriser votre réussite numérique, avec passion et sans jargon.
                 </p>
-                <a href="/contact" class="text-decoration-none fw-bold small mt-3 d-inline-block" style="color: var(--primary-color);">
+                <a href="/contact" class="text-decoration-none fw-bold small mt-3 d-inline-block text-green" style="color: var(--primary-color);">
                     Discutons d'un projet <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </section>
 
-        <section class="py-4 my-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center" data-aos="fade-up">
-                    <h2 class="h3 fw-bold mb-4">Ma Pensée : L'Efficacité avant la Complexité</h2>
+        <section class="py-4 my-5 ">
+            <div class="row justify-content-center ">
+                <div class="col-lg-10 text-center bg-secondary bg-opacity-25 rounded-5 pt-5" data-aos="fade-up">
+                    <h2 class="h3 fw-bold mb-4 text-light">Ma Pensée : L'Efficacité avant la Complexité</h2>
                     <div class="vision-card">
                         <blockquote class="blockquote mb-0">
-                            <p class="mb-0 fs-5 text-muted">
+                            <p class="mb-0 fs-5 text-secondary">
                                 "La meilleure technologie n'est pas la plus complexe ou la plus chère ; c'est celle
                                 qui vous permet de vous concentrer sur ce que vous faites de mieux : votre métier."
                             </p>
                         </blockquote>
-                        <figcaption class="blockquote-footer mt-2 mb-0 text-end">
+                        <figcaption class="blockquote-footer mt-2 mb-0 text-end text-dark">
                             Nicolas
                         </figcaption>
                     </div>

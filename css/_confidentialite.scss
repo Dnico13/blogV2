@@ -1,0 +1,35 @@
+.privacy-section {
+    .privacy-content {
+        line-height: 1.8;
+    }
+
+    .privacy-block {
+        h2 {
+            border-left: 3px solid var(--ps-green);
+            padding-left: 15px;
+        }
+    }
+
+    .custom-list {
+        list-style: none;
+        padding-left: 0;
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            &::before {
+                content: "\f00c"; // Check FontAwesome
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                left: 0;
+                color: var(--ps-green);
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .border-green {
+        border-color: var(--ps-green) !important;
+    }
+}

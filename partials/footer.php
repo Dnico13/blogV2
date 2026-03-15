@@ -2,7 +2,7 @@
      <div class="container">
          <div class="row">
              <div class="col-md-4 mb-4" data-aos="fade-right">
-                 <h4 class="fw-bold mb-3">Tech for <span>Business</span></h4>
+                 <h4 class="fw-bold mb-3">Tech for <span class="text-green">Business</span></h4>
                  <p class="small text-white-50">Votre source d'information et d'analyse sur les technologies adaptées aux réalités des petites et moyennes entreprises.</p>
              </div>
              <div class="col-md-3 mb-4" data-aos="fade-up">
@@ -10,7 +10,8 @@
                  <ul class="list-unstyled">
                      <li><a href="/articles" class="footer-link" title="Voir tous les articles">Tous les articles</a></li>
                      <li><a href="/aPropos" class="footer-link" title="Mon Univers : Ma pensée">Mon Univers / Ma Pensée</a></li>
-                     <li><a href="mentions.html" class="footer-link" title="Voir les mentions légales">Mentions Légales</a></li>
+                     <li><a href="mentions-legales" hx-get="mentions-legales-partial" hx-target="#main" hx-push-url="/mentions-legales" class="footer-link" title="Voir les mentions légales">Mentions Légales</a></li>
+                     <li><a href="confidentialite" hx-get="confidentialite-partial" hx-target="#main" hx-push-url="/confidentialite" class="footer-link" title="Voir la politique de confidentialité">Politique de Confidentialité</a></li>
                  </ul>
              </div>
              <div class="col-md-3 mb-4" data-aos="fade-left">

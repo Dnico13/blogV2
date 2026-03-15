@@ -44,6 +44,41 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     
     // Mise à jour de l'image OG avec une image pertinente pour le blog
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+
+ }   elseif ($uri === '' || $uri === 'confidentialite' || $uri === 'confidentialite-partial') {
+    $contentView = 'views/confidentialite.php';
+    
+    // NOUVELLES BALISES MÉTA POUR LA PAGE DE CONFIDENTIALITÉ
+    
+    $viewData['title'] = 'Confidentialité | Tech for Business';
+    
+    $viewData['description'] = 'Découvrez notre politique de confidentialité et comment nous protégeons vos données personnelles.';
+    
+    $viewData['keywords'] = 'confidentialité, protection des données, RGPD, Tech for Business';
+    
+    $viewData['canonical'] = 'https://www.techforbusiness.fr/confidentialite';
+    
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+} elseif ($uri === 'mentions-legales' || $uri === 'mentions-legales-partial') {
+    $contentView = 'views/mnetions-legales.php';
+    
+    $viewData['title'] = 'Mentions Légales | Tech for Business';
+
+    $viewData['description'] = 'Découvrez nos mentions légales et les conditions d\'utilisation de notre site.';
+    
+    $viewData['keywords'] = 'mentions légales, conditions d\'utilisation, Tech for Business';
+    
+    // Utilisation de l'URL réelle du blog
+    $viewData['canonical'] = 'https://www.techforbusiness.fr/';
+    
+    // Mise à jour de l'image OG avec une image pertinente pour le blog
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+
+    //pour ne pas indexer cette page 
+    $viewData['noIndex'] = true;
+
+
+
 } elseif ($uri === 'articles' || $uri === 'articles-partial') {
     $contentView = 'views/articles.php';
     

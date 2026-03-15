@@ -1,10 +1,12 @@
-@import '_template.scss';
-@import '_index.scss';
-@import '_404.scss';
-@import '_aPropos.scss';
-@import '_contact.scss';
-@import '_article.scss';
-@import '_articlesdetail.scss';
-@import '_img.scss';
-@import '_colors.scss';
+@use 'colors' as *;      // Chargé en premier pour que les variables soient dispos
+@use 'template';
+@use 'index';
+@use '404' as errorPage;;
+@use 'aPropos';
+@use 'contact';
+@use 'article';
+@use 'articlesdetail';
+@use 'img';
+@use 'nav';
+@use 'confidentialite';
 

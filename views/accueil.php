@@ -1,104 +1,91 @@
- <?php
-    require_once 'controller/articleController.php';
-    ?>
+ <?php require_once 'controller/articleController.php'; ?>
 
+<header class="hero-section position-relative overflow-hidden">
+    <div class="liquid-blob"></div>
+    <div class="liquid-blob-2"></div>
+    
+    <div class="container position-relative" style="z-index: 2;" data-aos="fade-up" data-aos-duration="1200">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 font-montserrat mb-3">La Tech au Service de <span class="text-green">Votre Réussite</span></h1>
+                <p class="lead mb-4 text-muted">Des solutions concrètes et éprouvées pour les PME, TPE et Autoentrepreneurs.</p>
+                <a href="/detailArticle?id=<?= $lastArticle['id']; ?>" class="btn-ps-primary" title="Lire le dernier article">
+                    Lire le dernier article
+                </a>
+            </div>
+            </div>
+    </div>
+</header>
 
- <header class="hero-section ">
-     <div class="hero-overlay"></div>
-     <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
-         <h1 class=" pt-5 pt-md-0 mb-3">La Tech au Service de Votre Réussite</h1>
-         <p class="lead mb-4 text-white-50">Des solutions concrètes et éprouvées pour les PME, TPE et Autoentrepreneurs.</p>
-         <a href="/detailArticle?id=<?= $lastArticle['id']; ?>" class="btn btn-tech btn-sm btn-md-lg mx-auto" title="Lire le dernier article">Lire le dernier article</a>
-     </div>
- </header>
+<main>
+    <section class="py-5" id="featured">
+        <div class="container">
+            <h2 class="section-title text-white font-montserrat">À la Une</h2>
+            <div class="mini-line mb-4"></div>
 
- <main class="">
+            <div class="row g-0 shadow-green-glow rounded-4 overflow-hidden" data-aos="zoom-in" style="border: 1px solid var(--ps-border);">
+                <div class="col-lg-7 ">
+                    <img src="/uploads/<?= $lastArticle['photo1']; ?>" class="img-fluid w-100 h-100 " alt="illustration du dernier article" style="object-fit: cover; min-height: 400px; filter: brightness(0.9);">
+                </div>
 
-     <section class="my-5 py-5 bg-white" id="featured">
-         <div class="container ">
-             <h2 class="section-title">À la Une</h2>
-             <div class="separator-line"></div>
+                <div class="col-lg-5" style="background: #1a1d21; padding: 40px;">
+                    <div class="featured-article-content">
+                        <span class="badge border border-success text-green mb-3 text-uppercase" style="background: rgba(50, 255, 180, 0.1);">
+                            <?= $lastArticle['rubrique']; ?>
+                        </span>
+                        <h3 class="font-montserrat text-white mb-3"><?= $lastArticle['titre_general']; ?></h3>
+                        <p class="text-muted small mb-3"><?= $lastArticle['date']; ?></p>
+                        <p class="lead fw-light text-white-50"><?= $lastArticle['2lignes']; ?></p>
+                        <a href="/detailArticle?id=<?= $lastArticle['id']; ?>" class="text-decoration-none fw-bold text-green" title="Lire l'article complet">
+                            Lire l'article complet <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-             <div class="row g-0 shadow-lg" data-aos="zoom-in">
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-white font-montserrat">Les Derniers Billets</h2>
+            <div class="mini-line mb-5"></div>
 
-                 <div class="col-lg-7">
-                     <img src="/uploads/<?= $lastArticle['photo1']; ?>" class="img-fluid w-100 h-100" alt="illustration de l'article <?= $lastArticle['titre_general']; ?> " loading="lazy">
+            <?php $delai = 150; ?>
+            <div class="row g-4">
+                <?php foreach ($recentArticles as $article): ?>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?= $delai; ?>">
+                        <div class="feature-box h-100 d-flex flex-column position-relative">
+                            <img src="/uploads/<?= htmlspecialchars($article['photo1']); ?>" 
+                                 class="rounded-4 mb-3" 
+                                 alt="illustration" 
+                                 style="width: 100%; height: 200px; object-fit: cover; border: 1px solid var(--ps-border);">
+                            
+                            <span class="text-green small text-uppercase fw-bold mb-2"><?= htmlspecialchars($article['rubrique']); ?></span>
+                            <h4 class="text-white mb-3 font-montserrat" style="font-size: 1.2rem;"><?= htmlspecialchars($article['titre_general']); ?></h4>
+                            <p class="text-muted small flex-grow-1"><?= htmlspecialchars($article['2lignes']); ?></p>
+                            
+                            <div class="pt-3 mt-auto border-top border-secondary d-flex justify-content-between align-items-center">
+                                <span class="text-muted" style="font-size: 0.75rem;">Publié le <?= htmlspecialchars($article['date']); ?></span>
+                                <a href="/detailArticle?id=<?= htmlspecialchars($article['id']); ?>" class="stretched-link text-green" title="Lire">
+                                    <i class="fas fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php $delai += 100; endforeach; ?>
+            </div>
 
-                 </div>
-
-                 <div class="col-lg-5 ">
-                     <div class="featured-article-content bg-body-secondary">
-                         <span class="badge bg-primary mb-3 text-uppercase"><?= $lastArticle['rubrique']; ?></span>
-                         <h3 class="card-title-article mb-3"><?= $lastArticle['titre_general']; ?></h3>
-                         <p class="text-muted small mb-3"><?= $lastArticle['date']; ?></p>
-                         <p class="lead fw-light"><?= $lastArticle['2lignes']; ?></p>
-                         <a href="/detailArticle?id=<?= $lastArticle['id']; ?>" class="text-decoration-none fw-bold" style="color: var(--primary-color);" title="Lire l'article complet">Lire l'article complet <i class="fas fa-arrow-right ms-2"></i></a>
-                     </div>
-                 </div>
-             </div>
-
-         </div>
-     </section>
-
-     <section class="py-5" style="background-color: var(--light-bg);">
-         <div class="container">
-             <h2 class="section-title">Les Derniers Billets</h2>
-             <div class="separator-line"></div>
-
-             <?php
-                // Initialisation du délai pour les animations AOS // 
-                $delai = 150;
-                ?>
-
-             <div class="row g-4">
-                 <?php foreach ($recentArticles as $article): ?>
-
-                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?= $delai; ?>">
-                         <div class="card article-card h-100 rounded-4 shadow-sm">
-                             <img src="/uploads/<?= htmlspecialchars($article['photo1']); ?>" class="card-img-top" alt="illustration de l'article <?= htmlspecialchars($article['titre_general']); ?>" loading="lazy">
-                             <div class="card-body bg-body-secondary">
-                                 <span class="badge bg-primary w-50 mb-2"><?= htmlspecialchars($article['rubrique']); ?></span>
-                                 <h4 class="card-title-article mb-3"><?= htmlspecialchars($article['titre_general']); ?></h4>
-                                 <p class="card-text small text-muted"><?= htmlspecialchars($article['2lignes']); ?></p>
-                                 <a href="/detailArticle?id=<?= htmlspecialchars($article['id']); ?>" class="stretched-link" title="Lire l'article: <?= htmlspecialchars($article['titre_general']); ?> "></a>
-                             </div>
-                             <div class="card-footer bg-white border-0 small text-muted">
-                                 Publié le <?= htmlspecialchars($article['date']); ?>
-                             </div>
-                         </div>
-                     </div>
-                 <?php
-                        // Incrémentation du délai pour la prochaine carte //
-                        $delai += 250;
-                    endforeach; ?>
-
-
-
-             </div>
-
-             <div class="text-center mt-5" data-aos="fade-up">
-                 <a href="/articles" class="btn btn-outline-primary rounded-pill px-4" title=" Voir tous les articles">Voir tous les articles <i class="fas fa-long-arrow-alt-right ms-2"></i></a>
-             </div>
-
-         </div>
-     </section>
-
-     <!-- <section class="  py-5 bg-primary" data-aos="zoom-in">
-         <div class="container text-center text-white">
-             <h3 class="fw-bold mb-3" style="font-family: var(--font-title);">Ne manquez aucune tendance Tech !</h3>
-             <p class="lead mb-4 text-white-75">Recevez nos analyses directement par email. (Gratuit et sans spam)</p>
-
-             <form class="row justify-content-center" action="subscribe.php" method="POST">
-                 <div class="col-md-5 mb-3">
-                     <input type="email" class="form-control rounded-pill py-2" placeholder="Votre adresse email professionnelle" required>
-                 </div>
-                 <div class="col-md-3 mb-3">
-                     <button type="submit" class="btn btn-light btn-tech rounded-pill w-100 py-2" style="background-color: white !important; color: var(--primary-color) !important; border-color: white !important;">S'abonner</button>
-                 </div>
-             </form>
-         </div>
-     </section>-->
-     <script>
-         AOS.refreshHard()
-     </script>
- </main>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="/articles" class="btn-ps-primary px-5 rounded-pill" title="Voir tous les articles">
+                    Voir tous les articles <i class="fas fa-long-arrow-alt-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+                  
+    <script>
+        // Refresh pour s'assurer que les animations se déclenchent sur le nouveau contenu
+        AOS.init();
+        AOS.refreshHard();
+    </script>
+</main>

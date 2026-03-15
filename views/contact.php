@@ -14,15 +14,15 @@
                  <h2 class="h4 fw-bold mb-4">Envoyez-moi un message direct</h2>
                  <form action="./formSend.php" method="POST">
                      <div class="mb-3">
-                         <label for="name" class="form-label small fw-bold">Nom & Prénom</label>
+                         <label for="name" class="form-label small fw-bold text-green">Nom & Prénom</label>
                          <input type="text" class="form-control" id="name" name="name" required>
                      </div>
                      <div class="mb-3">
-                         <label for="email" class="form-label small fw-bold">Adresse Email</label>
+                         <label for="email" class="form-label small fw-bold text-green">Adresse Email</label>
                          <input type="email" class="form-control" id="email" name="email" required>
                      </div>
                      <div class="mb-3">
-                         <label for="objet" class="form-label small fw-bold">Objet de votre demande</label>
+                         <label for="objet" class="form-label small fw-bold text-green">Objet de votre demande</label>
                          <select class="form-select" id="objet" name="objet" required>
                              <option selected>J'aimerais vous contacter pour...</option>
                              <option>J'ai une question sur un article !</option>
@@ -32,18 +32,18 @@
                          </select>
                      </div>
                      <div class="mb-4">
-                         <label for="message" class="form-label small fw-bold">Votre Message</label>
+                         <label for="message" class="form-label small fw-bold text-green    ">Votre Message</label>
                          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                      </div>
 
-                     <button type="submit" name="submit" class="btn btn-tech" title="Envoyer le message">Envoyer le Message <i class="fas fa-paper-plane ms-2"></i></button>
+                     <button type="submit" name="submit" class="btn btn-tech text-green" title="Envoyer le message">Envoyer le Message <i class="fas fa-paper-plane ms-2"></i></button>
                  </form>
              </div>
 
              <div class="col-lg-5" data-aos="fade-left">
                  <h2 class="h4 fw-bold mb-4">Autres moyens de connexion</h2>
 
-                 <div class="contact-info-card">
+                 <div class="contact-info-card bg-secondary bg-opacity-25 rounded-3 p-4 ">
 
                      <div class="text-center mb-4">
                          <i class="fas fa-envelope"></i>
