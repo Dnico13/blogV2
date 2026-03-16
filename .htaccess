@@ -10,3 +10,49 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 # Transformer /article/mon-slug en detailArticle.php?slug=mon-slug
 RewriteRule ^article/([a-zA-Z0-9\-]+)$ detailArticle.php?slug=$1 [L,QSA]
+
+ServerSignature Off
+ErrorDocument 404 /404.php
+
+# ----------------------------------------------------------------------
+# 1. COMPRESSION (mod_deflate)
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 2. CACHE NAVIGATEUR (mod_expires)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # Images (WebP, JPG, PNG, ICO)
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Polices (Indispensable pour corriger l'alerte Lighthouse)
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+
+    # Scripts et Styles
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3. SECURITÉ DE BASE (Optionnel mais recommandé)
+# ----------------------------------------------------------------------
+# Empêche de lister le contenu des dossiers s'il n'y a pas d'index.php
+Options -Indexes
+
+# Ajouter le type MIME pour l'AVIF
+AddType image/avif .avif
+
+<IfModule mod_expires.c>
+    # Cache longue durée pour l'AVIF
+    ExpiresByType image/avif "access plus 1 year"
+</IfModule>

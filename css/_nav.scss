@@ -1,11 +1,12 @@
 /* --- STYLE NAVBAR UNIFIÉ --- */
 
 .navbar { 
-    top: 35px !important; /* Laisse de la place pour ta network-bar */
-    background-color: #000000 !important; /* Noir pur pour trancher avec le body */
+    top: 30px !important; /* Laisse de la place pour ta network-bar */
+   background-color: rgba(0, 0, 0, 0.2) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 0;
     transition: all 0.3s ease;
+    
 }
 
 /* Logo Tech for Business */

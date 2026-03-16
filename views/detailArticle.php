@@ -2,7 +2,7 @@
 
  <link rel="canonical" href="https://www.techforbusiness.fr/article/<?= $article['slug']; ?>" />
 
- <main class="py-5">
+ <main class=" my-5 py-5">
      <div class="container">
          <div class="row justify-content-center">
              <div class="col-lg-8">
@@ -31,21 +31,21 @@
                      <h2><?= htmlspecialchars($article["titre4"]); ?></h2>
                      <p><?= nl2br(htmlspecialchars($article["para4"])); ?></p>
 
-                     <div class="my-5 p-4 rounded-end shadow-sm"
+                     <div class="my-5 p-4 rounded-4 shadow-sm"
                          style="background-color: rgba(50, 255, 180, 0.05); border-left: 5px solid var(--ps-green);"
                          data-aos="zoom-in">
-                         <h4 class="fw-bold" style="color: #1a1a1a;">Prêt à concrétiser votre vision ?</h4>
-                         <p class="mb-3 text-dark">Besoin d'un accompagnement pour créer votre site web ou booster votre présence digitale avec un expert.</p>
+                         <h4 class="fw-bold text-light">Prêt à concrétiser votre vision ?</h4>
+                         <p class="mb-3 text-muted">Besoin d'un accompagnement pour créer votre site web ou booster votre présence digitale avec un expert.</p>
                          <div class="d-flex flex-wrap gap-3">
-                             <a href="https://www.proxisite.fr" target="_blank" rel="noopener noreferrer"
+                             <a href="https://www.proxisite.fr" target="_blank" rel="noopener noreferrer me"
                                  class="btn btn-sm rounded-pill px-4 fw-bold"
                                  style="background-color: var(--ps-green); color: #000; border: none;">
-                                 🚀 Lancer mon projet sur ProxiSite
+                                  Lancer votre projet
                              </a>
-                             <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener noreferrer"
-                                 class="btn btn-sm rounded-pill px-4 fw-bold shadow-sm"
+                             <a href="https://www.developpeurweb83.fr/projets" target="_blank" rel="noopener noreferrer me"
+                                 class="btn btn-sm rounded-pill text-muted px-4 fw-bold shadow-sm"
                                  style="border: 2px solid var(--ps-green); color: #000; background: transparent;">
-                                 ✨ Voir les démos techniques
+                                  Voir les démos techniques
                              </a>
                          </div>
                      </div>
@@ -57,22 +57,22 @@
                      <p><?= nl2br(htmlspecialchars($article["para5"])); ?></p>
                  </div>
 
-                 <div class="author-box d-flex align-items-center bg-light p-4 rounded-4 mt-5 shadow-sm border-start"
-                     style="border-left: 4px solid var(--ps-green) !important;">
+                 <div class="author-box d-flex align-items-center  p-4 rounded-4 mt-5 shadow-sm border-start"
+                     style="border-left: 4px solid var(--ps-green) !important; background-color: rgba(50, 255, 180, 0.05); border-left: 5px solid var(--ps-green);">
                      <div>
-                         <h5 class="fw-bold mb-1 text-dark">Par Nicolas Delannay</h5>
-                         <p class="small text-white mb-2">Fondateur de <strong>Tech for Business</strong>. Je simplifie la technologie pour booster votre efficacité commerciale.</p>
-                         <p class="small mb-0">
-                             <span class="text-dark fw-semibold">Mes services :</span>
+                         <h5 class="fw-bold mb-1 text-white">Par Nicolas Delannay</h5>
+                         <p class="small text-muted mb-2">Fondateur de <strong>Tech for Business</strong>. Je simplifie la technologie pour booster votre efficacité commerciale.</p>
+                        <!-- <p class="small mb-0">
+                             <span class="text-muted fw-semibold">Mes services :</span>
 
-                             <a href="https://www.proxisite.fr" target="_blank" rel="noopener"
+                             <a href="https://www.proxisite.fr" target="_blank" rel="noopener noreferrer me"
                                  class="fw-bold text-decoration-none ms-1" style="color: #0fb881;">ProxiSite.fr</a>
 
                              <span class="mx-1 text-muted">|</span>
 
-                             <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener"
+                             <a href="https://www.developpeurweb83.fr/projets" target="_blank" rel="noopener noreferrer me"
                                  class="fw-bold text-decoration-none" style="color: #0fb881;">Démos Live</a>
-                         </p>
+                         </p>-->
                      </div>
                  </div>
              </div>
