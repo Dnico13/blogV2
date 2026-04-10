@@ -7,6 +7,10 @@
     <?php else: ?>
         <meta name="robots" content="index, follow">
     <?php endif; ?>
+
+    <link rel="preload" as="image" href="/uploads/<?= $lastArticle['photo1']; ?>">
+    
+
     <title id="page-title"><?= $title ?? 'Tech for Business : Astuces Numériques pour TPE, PME et Associations' ?></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +49,7 @@
 
     <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vjiPcVSeHOThJ" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
 
     <!-- Google Analytics -->
     <!-- Google tag (gtag.js) -->

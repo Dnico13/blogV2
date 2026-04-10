@@ -22,7 +22,9 @@
                      <p><?= nl2br(htmlspecialchars($article["para2"])); ?></p>
 
                      <div class="text-center my-4 mb-5 mx-auto" style="max-width: 600px;">
-                         <img src="/uploads/<?= htmlspecialchars($article["photo2"]); ?>" class="img-fluid rounded shadow" alt="<?= htmlspecialchars($article["titre_general"]); ?>">
+                         <img src="/uploads/<?= htmlspecialchars($article["photo2"]); ?>" class="img-fluid rounded shadow" alt="<?= htmlspecialchars($article["titre_general"]); ?>"
+                             loading="lazy"
+                             title="<?= htmlspecialchars($article["titre_general"]); ?>">
                      </div>
 
                      <h2><?= htmlspecialchars($article["titre3"]); ?></h2>

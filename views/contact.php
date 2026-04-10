@@ -1,4 +1,4 @@
- <header class="page-header-contact text-center">
+ <header class="page-header-contact text-center ">
      <div class="container" data-aos="fade-down">
          <h1 class="display-5 fw-bold mb-3">Entrons en Contact</h1>
          <p class="lead text-white-50">Que vous ayez une question, une proposition de collaboration ou une idée d'article.</p>
@@ -36,7 +36,7 @@
                          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                      </div>
 
-                     <button type="submit" name="submit" class="btn btn-tech text-green" title="Envoyer le message">Envoyer le Message <i class="fas fa-paper-plane ms-2"></i></button>
+                     <button type="submit" name="submit" class="btn btn-tech text-dark" title="Envoyer le message">Envoyer le Message <i class="fas fa-paper-plane ms-2"></i></button>
                  </form>
              </div>
 

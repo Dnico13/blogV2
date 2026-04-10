@@ -1,4 +1,6 @@
- <?php require_once 'controller/articleController.php'; ?>
+ <?php require_once 'controller/articleController.php'; 
+ echo  $lastArticle['photo1']; 
+?>
 
  <header class="hero-section position-relative overflow-hidden">
      <div class="liquid-blob"></div>
@@ -22,18 +24,20 @@
          <div class="container">
              <h2 class="section-title text-white font-montserrat">À la Une</h2>
              <div class="mini-line mb-4"></div>
-
              <div class="row g-0 shadow-green-glow rounded-4 overflow-hidden" data-aos="zoom-in" style="border: 1px solid var(--ps-border);">
-
+                 
                  <div class="col-lg-6 d-flex">
                      <div class="ratio ratio-16x9 w-100">
-                         <img src="/uploads/<?= $lastArticle['photo1']; ?>"
-                             class="object-fit-cover"
-                             alt="illustration du dernier article"
-                             style="filter: brightness(0.9);">
-                     </div>
-                 </div>
-
+                         <img src="/uploads/<?= htmlspecialchars(trim($lastArticle['photo1'])); ?>"
+                         class="object-fit-cover"
+                         alt="illustration du dernier article dont le titre est :'<?= htmlspecialchars($lastArticle['titre_general']); ?>'"
+                         style="filter: brightness(0.9);"
+                         loading="lazy"
+                         title="<?= htmlspecialchars($lastArticle['titre_general']); ?>">
+                        </div>
+                    </div>
+                   
+                    
                  <div class="col-lg-6 d-flex flex-column justify-content-center p-3 p-md-5" style="background: #1a1d21;">
                      <div class="featured-article-content p-0">
                          <span class="badge border border-success text-green mb-3 text-uppercase" style="background: rgba(50, 255, 180, 0.1);">
@@ -70,7 +74,9 @@
                              <img src="/uploads/<?= htmlspecialchars($article['photo1']); ?>"
                                  class="rounded-4 mb-3"
                                  alt="illustration"
-                                 style="width: 100%; height: 200px; object-fit: cover; border: 1px solid var(--ps-border);">
+                                 style="width: 100%; height: 200px; object-fit: cover; border: 1px solid var(--ps-border);"
+                                 loading="lazy"
+                                 title="<?= htmlspecialchars($article['titre_general']); ?>">
 
                              <span class="text-green small text-uppercase fw-bold mb-2"><?= htmlspecialchars($article['rubrique']); ?></span>
                              <h4 class="text-white mb-3 font-montserrat" style="font-size: 1.2rem;"><?= htmlspecialchars($article['titre_general']); ?></h4>

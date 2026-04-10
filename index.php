@@ -195,6 +195,10 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     
     // Utilisation de l'URL réelle du blog (www.techforbusiness.fr) pour l'image
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png'; 
+
+    //pour ne pas indexer cette page 
+    $viewData['noIndex'] = true;
+
 } else {
 
     // Label pour la gestion du 404 (utilisé par le 'goto' ci-dessus)

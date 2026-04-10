@@ -726,49 +726,22 @@ p, span, h1, h2, h3, h4, h5, h6, li {
 
 /* --- STYLE NAVBAR UNIFIÉ --- */
 .navbar {
-  top: 30px !important; /* Laisse de la place pour ta network-bar */
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  top: 35px !important; /* Position par défaut sur Desktop pour laisser la place à la network-bar */
+  background-color: rgba(15, 17, 19, 0.8) !important;
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 15px 0;
+  padding: 15px 30px;
   transition: all 0.3s ease;
 }
 
-/* Logo Tech for Business */
-.navbar-brand {
-  font-weight: 700;
-  color: #ffffff !important;
-  font-size: 1.4rem;
-}
-
-.navbar-brand span {
-  color: var(--ps-green); /* Le mot "Business" en vert néon */
-}
-
-/* Liens de navigation */
-.nav-link {
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #bdc3c7 !important; /* Gris text-muted de ta charte */
-  transition: 0.3s;
-  padding: 0.5rem 1.2rem !important;
-}
-
-/* Hover : passage au vert */
-.nav-link:hover {
-  color: var(--ps-green) !important;
-}
-
-/* État Actif : Vert + Lueur */
-.nav-link.active {
-  color: var(--ps-green) !important;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(50, 255, 180, 0.5);
-}
-
-/* Adaptation pour le menu mobile */
+/* --- AJUSTEMENTS RESPONSIVE --- */
 @media (max-width: 991px) {
+  /* 1. ON COLLE LA NAVBAR EN HAUT SUR MOBILE */
+  .navbar {
+    top: 0 !important; /* Supprime l'espace du haut sur mobile */
+    padding: 10px 15px; /* Réduit le padding pour gagner de la place */
+  }
+  /* 2. MENU MOBILE */
   .navbar-collapse {
     background: #000000;
     padding: 20px;
@@ -776,7 +749,47 @@ p, span, h1, h2, h3, h4, h5, h6, li {
     margin-top: 10px;
     border: 1px solid var(--ps-border);
   }
+  /* 3. AJUSTEMENT DU BODY */
+  body {
+    padding-top: 70px !important; /* Évite que le contenu passe sous la barre collée */
+  }
 }
+@media (min-width: 992px) {
+  body {
+    padding-top: 110px; /* Espace pour network-bar + navbar sur desktop */
+  }
+}
+/* --- RESTE DE TON STYLE (LOGO ET LIENS) --- */
+.navbar-brand {
+  font-weight: 700;
+  color: #ffffff !important;
+  font-size: 1.4rem;
+}
+
+.navbar-brand span {
+  color: var(--ps-green);
+}
+
+.nav-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #bdc3c7 !important;
+  transition: 0.3s;
+  padding: 0.5rem 1.2rem !important;
+}
+
+.nav-link:hover {
+  color: var(--ps-green) !important;
+}
+
+.nav-link.active {
+  color: var(--ps-green) !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(50, 255, 180, 0.5);
+}
+
 .privacy-section .privacy-content {
   line-height: 1.8;
 }

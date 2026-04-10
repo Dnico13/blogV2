@@ -46,7 +46,8 @@ $delai = 150;
                     <img src="./uploads/<?= htmlspecialchars($article['photo1']); ?>" 
                          class="card-img-top img-fluid article-img" 
                          alt="Article : <?= htmlspecialchars($article['titre_general']); ?>" 
-                         loading="lazy">
+                         loading="lazy"
+                         title="<?= htmlspecialchars($article['titre_general']); ?>">
                     
                     <div class="card-body ">
                         <span class="badge badge-category mb-2 w-50"><?= htmlspecialchars($article['rubrique']); ?></span>
