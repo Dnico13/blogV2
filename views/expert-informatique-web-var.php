@@ -68,7 +68,5 @@
         </section>-->
 
     </div>
-    <script>
-        AOS.refreshHard()
-    </script>
+    
 </main>

@@ -48,7 +48,7 @@
                      <div class="text-center mb-4">
                          <i class="fas fa-envelope"></i>
                          <h5 class="fw-bold">Email Direct</h5>
-                         <p class="mb-0 small text-muted">contact@techforbusiness.fr</p>
+                         <p class="mb-0 small text-muted">&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#116;&#101;&#99;&#104;&#102;&#111;&#114;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#46;&#102;&#114;</p>
                          <p class="small text-muted">Réponse garantie</p>
                      </div>
 

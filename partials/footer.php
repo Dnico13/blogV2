@@ -8,8 +8,8 @@
              <div class="col-md-3 mb-4" data-aos="fade-up">
                  <h5 class="fw-bold mb-3">Navigation</h5>
                  <ul class="list-unstyled">
-                     <li><a href="/articles" class="footer-link" title="Voir tous les articles">Tous les articles</a></li>
-                     <li><a href="/aPropos" class="footer-link" title="Mon Univers : Ma pensée">Mon Univers / Ma Pensée</a></li>
+                     <li><a href="/conseils-informatique-business-web" class="footer-link" title="Voir tous les articles">Tous les articles</a></li>
+                     <li><a href="/expert-informatique-web-var" class="footer-link" title="Mon Univers : Ma pensée">Mon Univers / Ma Pensée</a></li>
                      <li><a href="mentions-legales" hx-get="mentions-legales-partial" hx-target="#main" hx-push-url="/mentions-legales" class="footer-link" title="Voir les mentions légales">Mentions Légales</a></li>
                      <li><a href="confidentialite" hx-get="confidentialite-partial" hx-target="#main" hx-push-url="/confidentialite" class="footer-link" title="Voir la politique de confidentialité">Politique de Confidentialité</a></li>
                  </ul>
@@ -17,7 +17,7 @@
              <div class="col-md-3 mb-4" data-aos="fade-left">
                  <h4 class="fw-bold mb-3">Contact & Suivi</h4>
                  <ul class="list-unstyled">
-                     <li><a href="/contact" class="footer-link" title="Me contacter">Écrire à l'auteur</a></li>
+                     <li><a href="/contact-creation-site-83" class="footer-link" title="Me contacter">Écrire à l'auteur</a></li>
                      <!--<li><a href="#" class="footer-link">Twitter / X</a></li>-->
                      <li>
                          <a href="https://www.linkedin.com/in/nicolas-delannay-743385236" target="_blank" rel="noopener noreferrer" class="footer-link" title="Visiter mon profil LinkedIn">

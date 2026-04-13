@@ -8,8 +8,10 @@
         <meta name="robots" content="index, follow">
     <?php endif; ?>
 
-    <link rel="preload" as="image" href="/uploads/<?= $lastArticle['photo1']; ?>">
-    
+    <?php if (!empty($lastArticle) && isset($lastArticle['photo1'])): ?>
+        <link rel="preload" as="image" href="/uploads/<?= htmlspecialchars($lastArticle['photo1']) ?>">
+    <?php endif; ?>
+
 
     <title id="page-title"><?= $title ?? 'Tech for Business : Astuces Numériques pour TPE, PME et Associations' ?></title>
     <meta charset="UTF-8">
@@ -39,7 +41,7 @@
     <meta name="twitter:description" content="<?= htmlspecialchars($description ?? 'Micro-stratégies et astuces tech pour TPE, PME et associations. Sans jargon, avec passion.') ?>" id="twitter-description">
     <meta name="twitter:image" content="<?= $ogImage ?? 'https://www.techforbusiness.fr/images/logo-tech-business.png' ?>" id="twitter-image">
 
-    <link rel="stylesheet" href="/css/index.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
