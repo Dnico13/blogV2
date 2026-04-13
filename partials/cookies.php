@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Cookies refusés par l'utilisateur.");
     });
 });
-
+defer
 </script>

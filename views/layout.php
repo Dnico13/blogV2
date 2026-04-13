@@ -47,43 +47,14 @@
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vjiPcVSeHOThJ" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vjiPcVSeHOThJ" crossorigin="anonymous" defer></script>
 
-    <link rel="stylesheet" href="css/style.min.css">
-
-    <!-- Google Analytics -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7SJGSD8PM"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-W7SJGSD8PM');
-    </script>
-    <script type="text/javascript">
-        (function(c, l, a, r, i, t, y) {
-            c[a] = c[a] || function() {
-                (c[a].q = c[a].q || []).push(arguments)
-            };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "vomvk8wr2q");
-    </script>
-
-
-
+    <link rel="stylesheet" href="/css/style.min.css">
 
 
     <?php
     //variables pour le balise nav et le footer
-    $currentPage = basename($_SERVER['REDIRECT_URL'], ".php");
+    $currentPage = trim($uri, '/');
     $annee = date('Y');
     ?>
 </head>
@@ -106,7 +77,7 @@
     ?>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

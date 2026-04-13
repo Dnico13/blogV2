@@ -3,7 +3,7 @@
 // Assurez-vous que 'pdo.php' est inclus avant toute tentative d'accès à la BDD
 // C'est souvent mieux de le faire ici, mais je le laisse dans la route pour l'exemple.
 // require_once 'pdo.php'; 
-
+define('IMG_URL', 'https://www.stompin-bones.fr/image/LesDeuxMusiciensPetit.webp');
 // =========================================================================
 // 1. INITIALISATION & DÉTECTION (CORRIGÉE)
 // =========================================================================
@@ -22,7 +22,7 @@ $isHtmxRequest = isset($_SERVER['HTTP_HX_REQUEST']);
 // Variables pour le rendu
 $viewData = [];
 $contentView = '';
-
+require_once 'pdo.php'; // Assurez-vous que la connexion PDO est disponible pour les routes qui en ont besoin
 // =========================================================================
 // 2. ROUTAGE & LOGIQUE (MODIFIÉE POUR DetailDuProjet)
 // =========================================================================
@@ -60,7 +60,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
 } elseif ($uri === 'mentions-legales' || $uri === 'mentions-legales-partial') {
-    $contentView = 'views/mnetions-legales.php';
+    $contentView = 'views/mentions-legales.php';
     
     $viewData['title'] = 'Mentions Légales | Tech for Business';
 
@@ -79,8 +79,8 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
 
 
 
-} elseif ($uri === 'articles' || $uri === 'articles-partial') {
-    $contentView = 'views/articles.php';
+} elseif ($uri === 'conseils-informatique-business-web' || $uri === 'conseils-informatique-business-web-partial') {
+    $contentView = 'views/conseils-informatique-business-web.php';
     
     // NOUVELLES BALISES MÉTA POUR LA PAGE DES ARTICLES
     
@@ -95,8 +95,8 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     
     // IMPORTANT : Mettre une image de couverture/listing pertinente pour le blog
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/listing-blog-tech.jpg'; 
-}  elseif ($uri === 'contact' || $uri === 'contact-partial') {
-    $contentView = 'views/contact.php';
+}  elseif ($uri === 'contact-creation-site-83' || $uri === 'contact-creation-site-83-partial') {
+    $contentView = 'views/contact-creation-site-83.php';
     
     // NOUVELLES BALISES MÉTA POUR LA PAGE CONTACT
     
@@ -111,58 +111,42 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     
     // IMPORTANT : Mettre une image de contact pertinente pour le blog
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/contact-blog-tech.jpg'; 
-}  elseif ($uri === 'detailArticle' || $uri === 'detailArticle-partial') {
+}  elseif (str_starts_with($uri, 'conseils-informatique-business-web')) {
 
-    require_once 'pdo.php';
-    
-    // 1. On récupère les deux sources possibles
-    $id = $_GET['id'] ?? null;
-    $slug = $_GET['slug'] ?? null;
+    $segments = explode('/', trim($uri, '/'));
+    $projet_slug = $segments[1] ?? '';
 
-    if ($id || $slug) {
-        // 2. On adapte la requête SQL selon ce qu'on a reçu
-        if ($slug) {
-            $sql = "SELECT * FROM article WHERE slug = :param";
-            $param = $slug;
-            $type = PDO::PARAM_STR;
-        } else {
-            $sql = "SELECT * FROM article WHERE id = :param";
-            $param = (int)$id;
-            $type = PDO::PARAM_INT;
-        }
+    if (!empty($projet_slug)) {
+        
+        $clean_slug = str_replace('-partial', '', $projet_slug);
 
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(':param', $param, $type);
-        $statement->execute();
+        // 1. RECHERCHE
+        $statement = $pdo->prepare("SELECT * FROM article WHERE slug = :slug");
+        $statement->execute(['slug' => $clean_slug]);
         $articleData = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!$articleData) {
-            goto notFound;
+            goto notFound; 
         }
 
-        // 3. Si l'article est trouvé, on prépare la vue
+        // 2. PRÉPARATION
         $contentView = 'views/detailArticle.php';
-        $viewData['article'] = $articleData;
-
-        // --- MÉTADONNÉES DYNAMIQUES ---
-        $viewData['title'] = htmlspecialchars($articleData['titre_general']) . ' | Blog Tech for Business';
         
-        $default_description = 'Découvrez les astuces, outils et stratégies expliqués dans cet article de fond par Tech for Business.';
-        $viewData['description'] = htmlspecialchars($articleData['presentation'] ?? $default_description);
-        
-        // URL Canonical Propre : On privilégie le slug pour l'URL finale
-        $canonical_slug = $articleData['slug'] ?? "id=".$articleData['id'];
-        $viewData['canonical'] = 'https://www.techforbusiness.fr/article/' . $canonical_slug;
-        
-        $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/image-par-defaut-article.jpg';
+        // On prépare $viewData pour le head.php
+        $viewData['article'] = $articleData; // Pour la vue
+        $viewData['title'] = htmlspecialchars($articleData['titre_general']) . ' | TechForBusiness';
+        $viewData['description'] = htmlspecialchars($articleData['meta_description'] ?? 'Conseils tech et business.');
+        $viewData['canonical'] = 'https://www.techforbusiness.fr/conseils-informatique-business-web/' . $clean_slug;
 
     } else {
-        goto notFound;
+        $contentView = 'views/conseils-informatique-business-web.php';
+        require_once 'controller/articleController.php';
     }
 
+
    
-} elseif ($uri === 'aPropos' || $uri === 'aPropos-partial') {
-    $contentView = 'views/aPropos.php';
+} elseif ($uri === 'expert-informatique-web-var' || $uri === 'expert-informatique-web-var-partial') {
+    $contentView = 'views/expert-informatique-web-var.php';
     
     // NOUVELLES BALISES MÉTA POUR LA PAGE À PROPOS
     

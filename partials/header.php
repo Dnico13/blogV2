@@ -25,25 +25,29 @@
          <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav ms-auto align-items-center gap-2">
                  <li class="nav-item">
-                     <a class="nav-link <?php echo ($currentPage == 'accueil' || $currentPage == '') ? 'active' : ''; ?>"
+                     <a class="nav-link <?php echo ($currentPage == 'accueil' || $currentPage == 'index') ? 'active' : ''; ?>"
                          hx-get="/accueil" hx-target="#main" hx-push-url="/accueil" href="/accueil">Accueil</a>
                  </li>
 
                  <li class="nav-item">
-                     <a class="nav-link <?php echo ($currentPage == 'articles' || $currentPage == 'detailArticle') ? 'active' : ''; ?>"
-                         hx-get="/articles" hx-target="#main" hx-push-url="/articles" href="/articles">Articles</a>
+                     <?php
+                        $isArticleActive = (str_starts_with($currentPage, 'conseils-informatique-business-web')) ? 'active' : '';
+                        ?>
+                     <a class="nav-link <?= $isArticleActive ?>"
+                         hx-get="/conseils-informatique-business-web" hx-target="#main" hx-push-url="/conseils-informatique-business-web"
+                         href="/conseils-informatique-business-web" title="Découvrez tous nos articles">Articles</a>
                  </li>
 
                  <li class="nav-item">
-                     <a class="nav-link <?php echo ($currentPage == 'aPropos') ? 'active' : ''; ?>"
-                         hx-get="/aPropos" hx-target="#main" hx-push-url="/aPropos" href="/aPropos">À Propos</a>
+                     <a class="nav-link <?php echo ($currentPage == 'expert-informatique-web-var') ? 'active' : ''; ?>"
+                         hx-get="/expert-informatique-web-var-partial" hx-target="#main" hx-push-url="/expert-informatique-web-var"
+                         href="/expert-informatique-web-var" title="En savoir plus">À Propos</a>
                  </li>
 
-
-
                  <li class="nav-item">
-                     <a class="btn-ps-primary btn-sm ms-lg-3 px-4"
-                         hx-get="/contact" hx-target="#main" hx-push-url="/contact" href="/contact">
+                     <a class="btn-ps-primary btn-sm ms-lg-3 px-4 <?php echo ($currentPage == 'contact-creation-site-83') ? 'active' : ''; ?>"
+                         hx-get="/contact-creation-site-83-partial" hx-target="#main" hx-push-url="/contact-creation-site-83"
+                         href="/contact-creation-site-83">
                          Contactez-moi
                      </a>
                  </li>
