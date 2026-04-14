@@ -1,11 +1,11 @@
- <div class="network-bar d-none d-md-block">
+ <!--<div class="network-bar d-none d-md-block">
      <div class="container d-flex justify-content-end align-items-center">
          <span class="d-none d-md-inline text-white-50 me-2" style="font-size: 10px;">NOS PLATEFORMES :</span>
          <a href="https://www.proxisite.fr" target="_blank" rel="noopener noreferrer me" title="Visiter le site de ProxiSite">ProxiSite</a>
          <a href="https://www.techforbusiness.fr" class="active-site" title="Visiter Tech for Business">Tech for Business</a>
          <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener noreferrer me" title="Visiter mon site de développeur">DevSite</a>
      </div>
- </div>
+ </div>-->
 
  <div class="bg-glow"></div>
 
