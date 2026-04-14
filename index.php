@@ -62,7 +62,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
 
     $viewData['canonical'] = 'https://www.techforbusiness.fr/confidentialite';
 
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 
     $viewData['noIndex'] = true;
 } elseif ($uri === 'mentions-legales' || $uri === 'mentions-legales-partial') {
@@ -78,7 +78,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/';
 
     // Mise à jour de l'image OG avec une image pertinente pour le blog
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 
     //pour ne pas indexer cette page 
     $viewData['noIndex'] = true;
@@ -96,7 +96,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/conseils-informatique-business-web';
 
     // IMAGE : On pointe vers ton image de listing (vérifie bien le dossier /images/ ou /uploads/)
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/listing-blog-tech.jpg';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 } elseif ($uri === 'contact-creation-site-83' || $uri === 'contact-creation-site-83-partial') {
     $contentView = 'views/contact-creation-site-83.php';
 
@@ -111,7 +111,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/contact-creation-site-83';
 
     // IMAGE : On garde ton image de contact (vérifie bien sa présence dans le dossier)
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/contact-blog-tech.jpg';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 } elseif (str_starts_with($uri, 'conseils-informatique-business-web')) {
 
     $segments = explode('/', trim($uri, '/'));
@@ -156,7 +156,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/expert-informatique-web-var';
 
     // IMAGE : On garde ton image dédiée à la présentation
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/about-blog-tech.jpg';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
     
 } elseif ($uri === 'test' || $uri === 'test-partial') {
     $contentView = 'views/test.php';
@@ -174,7 +174,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/';
 
     // Utilisation de l'URL réelle du blog (www.techforbusiness.fr) pour l'image
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 
     //pour ne pas indexer cette page 
     $viewData['noIndex'] = true;
@@ -197,7 +197,7 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
     $viewData['canonical'] = 'https://www.techforbusiness.fr/404';
 
     // Utilisation d'une image de logo ou une image montrant l'erreur
-    $viewData['ogImage'] = 'https://www.techforbusiness.fr/images/logo-tech-business.png';
+    $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
 }
 
 
