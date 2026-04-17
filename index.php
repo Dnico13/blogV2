@@ -126,6 +126,16 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
         $statement->execute(['slug' => $clean_slug]);
         $articleData = $statement->fetch(PDO::FETCH_ASSOC);
 
+        // Article Précédent
+        $stmtPrev = $pdo->prepare("SELECT slug FROM article WHERE id < ? ORDER BY id DESC LIMIT 1");
+        $stmtPrev->execute([$articleData['id']]);
+        $prevArticle = $stmtPrev->fetch();
+
+        // Article Suivant
+        $stmtNext = $pdo->prepare("SELECT slug FROM article WHERE id > ? ORDER BY id ASC LIMIT 1");
+        $stmtNext->execute([$articleData['id']]);
+        $nextArticle = $stmtNext->fetch();
+
         if (!$articleData) {
             goto notFound;
         }
@@ -157,7 +167,6 @@ if ($uri === '' || $uri === 'accueil' || $uri === 'accueil-partial') {
 
     // IMAGE : On garde ton image dédiée à la présentation
     $viewData['ogImage'] = 'https://www.techforbusiness.fr/uploads/pageDaccueilTechForBusiness.avif';
-    
 } elseif ($uri === 'test' || $uri === 'test-partial') {
     $contentView = 'views/test.php';
 

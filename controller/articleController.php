@@ -35,4 +35,7 @@ $recentArticles = $statement->fetchAll(PDO::FETCH_ASSOC);
 $statement = $pdo->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 1");
 $statement->execute();  
 $lastArticle = $statement->fetch(PDO::FETCH_ASSOC);
+
+
+
 ?>

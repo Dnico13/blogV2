@@ -53,7 +53,7 @@ $article = $article ?? $viewData['article'];
 
                 </div>
 
-                
+
 
                 <div class="author-box d-flex align-items-center p-4 rounded-4 mt-5 shadow-sm border-start"
                     style="border-left: 5px solid #0fb881 !important; background-color: rgba(50, 255, 180, 0.05);">
@@ -63,14 +63,38 @@ $article = $article ?? $viewData['article'];
                     </div>
                 </div>
 
-                <div class="mt-5 pt-3">
+                <div class="mt-5 pt-3 d-flex justify-content-between flex-wrap gap-2">
+
+                    <?php if ($prevArticle): ?>
+                        <a href="/conseils-informatique-business-web/<?= $prevArticle['slug']; ?>"
+                            hx-get="/conseils-informatique-business-web/<?= $prevArticle['slug']; ?>"
+                            hx-target="#main"
+                            hx-push-url="true"
+                            class="btn-ps-primary px-3 rounded-pill">
+                            <i class="fas fa-chevron-left me-2"></i> Précédent
+                        </a>
+                    <?php else: ?>
+                        <div></div> <?php endif; ?>
+
                     <a href="/conseils-informatique-business-web"
                         hx-get="/conseils-informatique-business-web"
                         hx-target="#main"
                         hx-push-url="true"
                         class="btn-ps-primary px-3 rounded-pill">
-                        <i class="fas fa-arrow-left me-2"></i> Retour aux articles
+                        <i class="fas fa-th-list me-2"></i> Tous les articles
                     </a>
+
+                    <?php if ($nextArticle): ?>
+                        <a href="/conseils-informatique-business-web/<?= $nextArticle['slug']; ?>"
+                            hx-get="/conseils-informatique-business-web/<?= $nextArticle['slug']; ?>"
+                            hx-target="#main"
+                            hx-push-url="true"
+                            class="btn-ps-primary px-3 rounded-pill">
+                            Suivant <i class="fas fa-chevron-right ms-2"></i>
+                        </a>
+                    <?php else: ?>
+                        <div></div> <?php endif; ?>
+
                 </div>
             </div>
         </div>
