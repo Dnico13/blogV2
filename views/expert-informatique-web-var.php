@@ -24,7 +24,7 @@
                 <p>
                     Mon but est de vous donner des idées pour développer efficacement votre courant d'affaires et sécuriser votre réussite numérique, avec passion et sans jargon.
                 </p>
-                <a href="/contact" class="text-decoration-none fw-bold small mt-3 d-inline-block text-green" style="color: var(--primary-color);">
+                <a href="contact-creation-site-83" hx-get="contact-creation-site-83-partial" hx-target="#main" hx-push-url="contact-creation-site-83" class="text-decoration-none fw-bold small mt-3 d-inline-block text-green" style="color: var(--primary-color);">
                     Discutons d'un projet <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
