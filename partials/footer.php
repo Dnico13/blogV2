@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="mt-3">
-                        <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener me" class="btn btn-outline-light btn-sm rounded-pill px-3" style="font-size: 0.75rem;">
+                        <a href="https://www.developpeurweb83.fr/exemples-creation-site-internet" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill px-3" style="font-size: 0.75rem;">
                             Mes sites témoins
                         </a>
                     </li>
@@ -48,8 +48,8 @@
 
         <div class="text-center pt-3 border-top border-secondary mt-4">
             <p class="mb-0 small text-white-50">
-                &copy; <?= $annee ?> Tech for Business. Développé en PHP natif par 
-                <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener me" class="text-white text-decoration-none border-bottom border-secondary">Nicolas Delannay</a>.
+                &copy; <?= $annee ?> Tech for Business. Développé  par <span class="text-white text-decoration-none" >Nicolas Delannay</span>.
+               <!-- <a href="https://www.developpeurweb83.fr" target="_blank" rel="noopener" class="text-white text-decoration-none border-bottom border-secondary"></a>-->
             </p>
         </div>
     </div>

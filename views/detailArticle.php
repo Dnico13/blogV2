@@ -54,7 +54,7 @@ $article = $article ?? $viewData['article'];
                             Basé à Puget sur Argens, j'accompagne les entreprises locales dans la création 
                             de solutions web ultra-performantes, souveraines et sans abonnement.
                         </p>
-                        <a href="https://proxisite.fr" target="_blank" rel="noopener me" 
+                        <a href="https://proxisite.fr" target="_blank" rel="noopener" 
                            class="btn-ps-primary btn-lg rounded-pill px-4 fw-bold">
                             Découvrir mes solutions sur Proxisite.fr
                         </a>
@@ -67,7 +67,7 @@ $article = $article ?? $viewData['article'];
                         <h6 class="text-white fw-bold mb-1">Envie de voir ces technologies en action ?</h6>
                         <p class="small text-muted mb-0">Explorez mes sites témoins et réalisations techniques.</p>
                     </div>
-                    <a href="https://www.developpeurweb83.fr/exemples-creation-site-internet" target="_blank" rel="noopener me" class="btn btn-outline-light btn-sm rounded-pill px-3 text-nowrap">
+                    <a href="https://www.developpeurweb83.fr/exemples-creation-site-internet" target="_blank" rel="noopener " class="btn btn-outline-light btn-sm rounded-pill px-3 text-nowrap">
                         Voir les démos <i class="fas fa-external-link-alt ms-1" style="font-size: 0.8rem;"></i>
                     </a>
                 </div>

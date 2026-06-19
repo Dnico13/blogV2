@@ -6,7 +6,7 @@
                 <div class="mb-5" data-aos="fade-down">
                     <span class="text-green fw-bold text-uppercase small letter-spacing-2">// Transparence</span>
                     <h1 class="display-4 font-montserrat mt-2">Politique de <span class="text-green">Confidentialité</span></h1>
-                    <p class="text-secondary">Dernière mise à jour : 1er Janvier 2026</p>
+                    <p class="text-secondary">Dernière mise à jour : 15 Mai 2026</p>
                 </div>
 
                 <div class="privacy-content text-secondary" data-aos="fade-up">
@@ -55,7 +55,7 @@
                             <li><strong>Droit de rectification :</strong> corriger vos informations.</li>
                             <li><strong>Droit de suppression :</strong> demander l'effacement de vos données.</li>
                         </ul>
-                        <p>Pour exercer ces droits, contactez-moi simplement à : <span class="text-green">contact@techforbusiness.fr</span></p>
+                        <p>Pour exercer ces droits, contactez-moi simplement à : <span class="text-green">&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#116;&#101;&#99;&#104;&#102;&#111;&#114;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#46;&#102;&#114;</span></p>
                     </div>
 
                     <div class="privacy-block mb-5">

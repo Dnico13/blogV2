@@ -65,14 +65,14 @@
 
     <?php require_once 'partials/header.php'; ?>
 
-    <div id="main" class="container-fluid mt-5 mt-md-0 pt-5 pt-md-0">
+    <main id="main" class="container-fluid mt-5 mt-md-0 pt-5 pt-md-0">
         <?php
         if (isset($dynamicContent)) {
             echo $dynamicContent;
         }
         ?>
 
-    </div>
+    </main>
 
     <?php
     require_once 'partials/footer.php';

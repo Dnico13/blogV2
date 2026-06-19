@@ -10,7 +10,7 @@
          <div class="row align-items-center">
              <div class="col-lg-7">
                  <h1 class="display-4 font-montserrat mb-3">La Tech au Service de <span class="text-green">Votre Réussite</span></h1>
-                 <p class="lead mb-4 text-muted">Des solutions concrètes et éprouvées pour les PME, TPE et Auto-entrepreneurs.</p>
+                 <p class="lead mb-4 text-secondary">Des solutions concrètes et éprouvées pour les PME, TPE et Auto-entrepreneurs.</p>
                  <a href="conseils-informatique-business-web/<?= htmlspecialchars($lastArticle['slug']) ?>"
                      hx-target="#main"
                      hx-push-url="conseils-informatique-business-web/<?= htmlspecialchars($lastArticle['slug']) ?>"
