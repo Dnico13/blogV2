@@ -49,26 +49,39 @@ $article = $article ?? $viewData['article'];
 
                 <div class="card border-0 rounded-4 my-5 shadow-sm" style="background-color: #f8f9fa;">
                     <div class="card-body p-4 text-center">
-                        <h4 class="fw-bold mb-3" style="color: #1a1a1a;">Besoin d'un expert à vos côtés dans le Var ?</h4>
+                        <h4 class="fw-bold mb-3" style="color: #1a1a1a;"><?= htmlspecialchars($article["titreLien1"] ?? "Besoin d'un expert à vos côtés dans le Var ?") ?></h4>
                         <p class="text-black mb-4">
-                            Basé à Puget sur Argens, j'accompagne les entreprises locales dans la création 
-                            de solutions web ultra-performantes, souveraines et sans abonnement.
+                            <?= htmlspecialchars($article["texteLien1"] ?? "Basé à Puget sur Argens, j'accompagne les entreprises locales dans la création 
+                            de solutions web ultra-performantes, souveraines et sans abonnement.") ?>
+
                         </p>
-                        <a href="https://proxisite.fr" target="_blank" rel="noopener" 
-                           class="btn-ps-primary btn-lg rounded-pill px-4 fw-bold">
-                            Découvrir mes solutions sur Proxisite.fr
+                        <a href="<?= htmlspecialchars($article["Lien1"] ?? "https://proxisite.fr") ?>"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn-ps-primary btn-lg rounded-pill px-4 fw-bold">
+                            <?= htmlspecialchars($article["detailLien1"] ?? " Découvrir mes solutions sur Proxisite.fr") ?>
+
                         </a>
                     </div>
                 </div>
 
-                <div class="p-4 rounded-4 mt-5 border d-flex align-items-center justify-content-between flex-wrap gap-3" 
-                     style="background: linear-gradient(145deg, #1a1a1a, #2a2a2a); border-color: #333 !important;">
+                <div class="p-4 rounded-4 mt-5 border d-flex align-items-center justify-content-between flex-wrap gap-3"
+                    style="background: linear-gradient(145deg, #1a1a1a, #2a2a2a); border-color: #333 !important;">
                     <div>
-                        <h6 class="text-white fw-bold mb-1">Envie de voir ces technologies en action ?</h6>
-                        <p class="small text-muted mb-0">Explorez mes sites témoins et réalisations techniques.</p>
+                        <h6 class="text-white fw-bold mb-1"><?= htmlspecialchars($article["titreLien2"] ?? "Envie de voir ces technologies en action ?") ?></h6>
+                        <p class="small text-muted mb-0">
+                            <?= htmlspecialchars($article["texteLien2"] ?? "Explorez mes sites témoins et réalisations techniques.") ?>
+                        </p>
                     </div>
-                    <a href="https://www.developpeurweb83.fr/exemples-creation-site-internet" target="_blank" rel="noopener " class="btn btn-outline-light btn-sm rounded-pill px-3 text-nowrap">
-                        Voir les démos <i class="fas fa-external-link-alt ms-1" style="font-size: 0.8rem;"></i>
+                    <a href="<?= htmlspecialchars($article["Lien2"] ?? " https://www.developpeurweb83.fr/exemples-creation-site-internet") ?>"
+                        target="_blank"
+                        rel="noopener "
+                        class="btn btn-outline-light btn-sm rounded-pill px-3 text-nowrap">
+                        <?= htmlspecialchars($article["detailLien2"] ?? " Voir les démos") ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-box-arrow-up-right ms-1 mb-1" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                        </svg>
                     </a>
                 </div>
 
