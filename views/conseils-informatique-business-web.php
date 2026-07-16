@@ -41,10 +41,10 @@ $delai = 150;
             <?php foreach ($articles as $article): ?>
 
                 <div class="col-lg-4 col-md-6 shadow-green-glow rounded-4" data-aos="fade-up" data-aos-delay="<?= $delai; ?>">
-                    <a href="conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>"
+                    <a href="/conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>"
                         hx-target="#main"
-                        hx-push-url="conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>"
-                        hx-get="conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>-partial"
+                        hx-push-url="/conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>"
+                        hx-get="/conseils-informatique-business-web/<?= htmlspecialchars($article['slug']) ?>-partial"
                         class="text-decoration-none text-dark d-block h-100"
                         title="<?= htmlspecialchars($article['titre_general']); ?>">
                         
